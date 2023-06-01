@@ -1,30 +1,108 @@
+import { Header } from 'components/Header';
+
 function App() {
   return (
     <>
-      <header>
-        <div className="test__container">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
-          praesentium quod in ipsam, recusandae minus expedita consectetur
-          ducimus inventore ullam quae, perspiciatis deleniti ab quo dolorum
-          esse tenetur facilis cupiditate.
-        </div>
-      </header>
+      <Header />
       <main>
         <div className="test__container">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
-          praesentium quod in ipsam, recusandae minus expedita consectetur
-          ducimus inventore ullam quae, perspiciatis deleniti ab quo dolorum
-          esse tenetur facilis cupiditate.
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus eveniet doloremque nostrum ratione nam deleniti
+            deserunt modi alias necessitatibus facere commodi earum illum
+            expedita, delectus eligendi corrupti molestiae. Saepe, commodi.
+          </p>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </main>
-      <footer>
-        <div className="test__container">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
-          praesentium quod in ipsam, recusandae minus expedita consectetur
-          ducimus inventore ullam quae, perspiciatis deleniti ab quo dolorum
-          esse tenetur facilis cupiditate.
-        </div>
-      </footer>
     </>
   );
 }
