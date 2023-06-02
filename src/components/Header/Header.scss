@@ -118,6 +118,7 @@
 }
 
 .header__menu {
+  z-index: 10;
   &.active {
     transform: translateX(0);
   }
