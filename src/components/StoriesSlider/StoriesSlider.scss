@@ -9,9 +9,9 @@
 
 .swiper-slide {
   background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .swiper-slide img {
@@ -47,6 +47,7 @@
   top: 50%;
   left: -20px;
   transform: translateY(-50%);
+  z-index: 10;
 }
 
 .slider-button.slider-prev.swiper-button-disabled {

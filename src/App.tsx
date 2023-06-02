@@ -1,4 +1,5 @@
 import { Header } from 'components/Header';
+import { PopularSlider } from 'components/PopularSlider';
 import { StoriesSlider } from 'components/StoriesSlider';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <Header />
       <StoriesSlider />
+      <PopularSlider />
     </>
   );
 }
