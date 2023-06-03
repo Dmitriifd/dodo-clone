@@ -5,7 +5,7 @@
   &.active::before {
     content: '';
     position: fixed;
-    width: 98%;
+    width: 97%;
     height: 80px;
     top: 0;
     left: 0;
@@ -118,7 +118,7 @@
 }
 
 .header__menu {
-  z-index: 10;
+  z-index: 2;
   &.active {
     transform: translateX(0);
   }

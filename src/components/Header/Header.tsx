@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { clsx } from 'clsx';
 import { ReactComponent as Star } from 'assets/img/star.svg';
@@ -11,7 +12,6 @@ import { ReactComponent as PhoneIcon } from 'assets/img/phone-icon.svg';
 import { ReactComponent as GoogleIcon } from 'assets/img/google-play-icon.svg';
 import logo from 'assets/img/pizza.svg';
 import './Header.scss';
-import { useState, useEffect } from 'react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
