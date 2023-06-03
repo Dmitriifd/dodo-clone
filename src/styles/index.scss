@@ -92,16 +92,28 @@ main {
 
 .title {
   color: var(--main-color);
-  font-weight: 600;
-  font-size: 36px;
+  font-weight: 500;
+  font-size: 24px;
   margin: 32px 0px;
+
+  @media (min-width: 870px) {
+    font-size: 36px;
+  }
 }
 
 .grid-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: 1fr;
   column-gap: 40px;
   row-gap: 75px;
+
+  @media (min-width: 870px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  @media (min-width: 1110px) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
 }
 
 // Ограничивающий контейнер
