@@ -35,7 +35,6 @@
 }
 
 .product-card__description {
-  // max-width: 292px;
   font-size: 14px;
   line-height: 20px;
   color: rgb(92, 99, 112);
@@ -54,6 +53,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.product-card__img {
+  img {
+    transition: transform 0.2s ease-out;
+  }
+
+  &:hover img {
+    transform: translateY(3px);
+  }
 }
 
 .product-card__img img {

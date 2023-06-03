@@ -25,6 +25,7 @@
   border: 3px solid #ff6900;
   border-radius: 20px;
   padding: 3px;
+  cursor: pointer;
 
   img {
     border-radius: 15px;
@@ -55,17 +56,6 @@
     width: calc(100% + 40px);
   }
 }
-
-// .slider-navigation {
-//   display: flex;
-//   justify-content: space-between;
-//   width: calc(100% - 20px);
-//   position: absolute;
-//   top: 50%;
-//   left: -20px;
-//   transform: translateY(-50%);
-//   z-index: 10;
-// }
 
 .slider-button.slider-prev.swiper-button-disabled {
   opacity: 0;

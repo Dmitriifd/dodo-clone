@@ -78,6 +78,11 @@
   column-gap: 10px;
   cursor: pointer;
   padding: 16px;
+  transition: box-shadow 0.2s ease-out;
+
+  &:hover {
+    box-shadow: rgba(6, 5, 50, 0.15) 0px 0px 12px -4px;
+  }
 
   img {
     width: 80px;
