@@ -2,6 +2,7 @@ import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import { PopularSlider } from 'components/PopularSlider';
 import { ProductCard } from 'components/ProductCard';
+import { StickyCart } from 'components/StickyCart';
 import { StoriesSlider } from 'components/StoriesSlider';
 
 const tempData = [
@@ -44,7 +45,7 @@ const tempData = [
       'Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус',
     price: '289 ₽',
     img: 'assets/pizza/1.png'
-  },
+  }
 ];
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
           </div>
         </section>
       </main>
+      <StickyCart />
       <Footer />
     </>
   );

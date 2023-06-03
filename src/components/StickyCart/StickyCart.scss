@@ -1,0 +1,43 @@
+.sticky {
+  display: none;
+  position: sticky;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 98;
+
+  @media (max-width: 991px) {
+    display: block;
+  }
+}
+.sticky-cart {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 16px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
+  transition: all 0.25s ease 0s;
+  user-select: none;
+  z-index: 3;
+
+  span {
+    position: absolute;
+    font-size: 14px;
+    text-align: center;
+    line-height: 21px;
+    top: 0px;
+    left: 38px;
+    min-width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    padding-bottom: 2px;
+    background: rgb(255, 105, 0);
+    color: rgb(255, 255, 255);
+  }
+}
