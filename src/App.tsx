@@ -1,9 +1,11 @@
+import { CartDrawer } from 'components/CartDrawer';
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import { PopularSlider } from 'components/PopularSlider';
 import { ProductCard } from 'components/ProductCard';
 import { StickyCart } from 'components/StickyCart';
 import { StoriesSlider } from 'components/StoriesSlider';
+import { useState } from 'react';
 
 const tempData = [
   {
@@ -49,9 +51,15 @@ const tempData = [
 ];
 
 function App() {
+  const [isOpenCart, setIsOpenCart] = useState(false);
+
+  const toggleCart = () => {
+    setIsOpenCart(!isOpenCart);
+  };
+
   return (
     <>
-      <Header />
+      <Header toggleCart={toggleCart} />
       <main className="main">
         <StoriesSlider />
         <PopularSlider />
@@ -68,6 +76,10 @@ function App() {
       </main>
       <StickyCart />
       <Footer />
+      <CartDrawer
+        isOpenCart={isOpenCart}
+        toggleCart={toggleCart}
+      />
     </>
   );
 }

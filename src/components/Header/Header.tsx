@@ -13,10 +13,9 @@ import { ReactComponent as GoogleIcon } from 'assets/img/google-play-icon.svg';
 import logo from 'assets/img/pizza.svg';
 import './Header.scss';
 
-const Header = () => {
+const Header = ({ toggleCart }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const { ref, inView } = useInView({ threshold: 0, initialInView: true });
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -138,7 +137,7 @@ const Header = () => {
           <a href="#" className="header__menu-mobile">
             <GoogleIcon />
           </a>
-          <button className="header__basket-btn btn">
+          <button className="header__basket-btn btn" onClick={toggleCart}>
             Корзина
             <div className="divider"></div>
             <div className="quantity">2</div>
