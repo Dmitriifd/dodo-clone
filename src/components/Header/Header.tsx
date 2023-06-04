@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { clsx } from 'clsx';
+import { Link } from 'react-scroll';
 import { ReactComponent as Star } from 'assets/img/star.svg';
 import { ReactComponent as Coin } from 'assets/img/dodocoin.svg';
 import { ReactComponent as ArrowButton } from 'assets/img/arrow-button.svg';
@@ -17,6 +18,7 @@ const Header = ({ toggleCart }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const { ref, inView } = useInView({ threshold: 0, initialInView: true });
   const toggleMenu = () => {
+    setIsOpen(false);
     setIsOpen(!isOpen);
   };
 
@@ -88,29 +90,64 @@ const Header = ({ toggleCart }: any) => {
             <Logo width={32} height={32} className="header__menu-logo" />
             <ul className="header__menu-list">
               <li className="header__menu-item">
-                <a href="#" className="header__menu-link">
+                <Link
+                  to="pizza"
+                  offset={-100}
+                  smooth={true}
+                  spy={true}
+                  duration={500}
+                  className="header__menu-link"
+                  activeClass="active">
                   Пицца
-                </a>
+                </Link>
               </li>
               <li className="header__menu-item">
-                <a href="#" className="header__menu-link">
+                <Link
+                  to="combo"
+                  offset={-50}
+                  smooth={true}
+                  spy={true}
+                  duration={500}
+                  className="header__menu-link"
+                  activeClass="active">
                   Комбо
-                </a>
+                </Link>
               </li>
               <li className="header__menu-item">
-                <a href="#" className="header__menu-link">
+                <Link
+                  to="snacks"
+                  offset={-50}
+                  smooth={true}
+                  spy={true}
+                  duration={500}
+                  className="header__menu-link"
+                  activeClass="active">
                   Закуски
-                </a>
+                </Link>
               </li>
               <li className="header__menu-item">
-                <a href="#" className="header__menu-link">
+                <Link
+                  to="desserts"
+                  offset={-50}
+                  smooth={true}
+                  spy={true}
+                  duration={500}
+                  className="header__menu-link"
+                  activeClass="active">
                   Десерты
-                </a>
+                </Link>
               </li>
               <li className="header__menu-item">
-                <a href="#" className="header__menu-link">
+                <Link
+                  to="drinks"
+                  offset={-50}
+                  smooth={true}
+                  spy={true}
+                  duration={500}
+                  className="header__menu-link"
+                  activeClass="active">
                   Напитки
-                </a>
+                </Link>
               </li>
               <li className="header__menu-item">
                 <a href="#" className="header__menu-link">

@@ -176,6 +176,11 @@
   font-size: 14px;
   font-weight: 500;
   transition: color 0.3s ease-out;
+  cursor: pointer;
+
+  &.active {
+    color: var(--color-primary);
+  }
 
   @media (max-width: 991px) {
     color: white;

@@ -64,6 +64,10 @@ main {
   overflow: hidden;
 }
 
+.section {
+  margin-bottom: 60px;
+}
+
 .no-scroll {
   overflow: hidden;
 }
@@ -94,7 +98,7 @@ main {
   color: var(--main-color);
   font-weight: 500;
   font-size: 24px;
-  margin: 32px 0px;
+  padding: 32px 0;
 
   @media (min-width: 870px) {
     font-size: 36px;
