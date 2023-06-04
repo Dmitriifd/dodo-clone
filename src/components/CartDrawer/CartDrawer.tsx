@@ -3,6 +3,7 @@ import { ReactComponent as CloseIcon } from 'assets/img/close-drawer-icon.svg';
 import { useEffect, useState } from 'react';
 import './CartDrawer.scss';
 import { EmptyCart } from './EmptyCart';
+import { CartDrawerHeader } from './CartDrawerHeader';
 
 const CartDrawer = ({ isOpenCart, toggleCart }: any) => {
   const [isEmpty, setIsEmpty] = useState(true);
@@ -31,7 +32,9 @@ const CartDrawer = ({ isOpenCart, toggleCart }: any) => {
           <EmptyCart />
         ) : (
           <div className="drawer__content">
-            <div className="drawer__header"></div>
+            <div className="drawer__header">
+              <CartDrawerHeader />
+            </div>
             <div className="drawer__body"></div>
             <div className="drawer__footer"></div>
           </div>

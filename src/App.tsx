@@ -1,11 +1,13 @@
 import { CartDrawer } from 'components/CartDrawer';
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
+import { NavMenu } from 'components/NavMenu';
 import { PopularSlider } from 'components/PopularSlider';
 import { ProductCard } from 'components/ProductCard';
 import { StickyCart } from 'components/StickyCart';
 import { StoriesSlider } from 'components/StoriesSlider';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const tempData = [
   {
@@ -44,6 +46,23 @@ const tempData = [
 
 function App() {
   const [isOpenCart, setIsOpenCart] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const { ref, inView } = useInView({ threshold: 1, initialInView: true });
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const isMobile = windowWidth < 992;
 
   const toggleCart = () => {
     setIsOpenCart(!isOpenCart);
@@ -51,10 +70,27 @@ function App() {
 
   return (
     <>
-      <Header toggleCart={toggleCart} />
+      <Header
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        ref1={ref}
+        isMobile={isMobile}
+      />
+
+      {!isMobile && (
+        <NavMenu inView={inView} isOpen={isOpen} toggleCart={toggleCart} />
+      )}
+
       <main className="main">
         <StoriesSlider />
         <PopularSlider />
+
+        <div className="mobile-nav" ref={isMobile ? ref : null}>
+          {isMobile && (
+            <NavMenu inView={inView} isOpen={isOpen} toggleCart={toggleCart} />
+          )}
+        </div>
+
         <section className="pizza section" id="pizza">
           <div className="pizza__container">
             <h2 className="pizza__title title">Пицца</h2>
@@ -106,7 +142,7 @@ function App() {
           </div>
         </section>
       </main>
-      <StickyCart />
+      <StickyCart toggleCart={toggleCart} />
       <Footer />
       <CartDrawer isOpenCart={isOpenCart} toggleCart={toggleCart} />
     </>
