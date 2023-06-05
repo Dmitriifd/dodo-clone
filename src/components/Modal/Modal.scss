@@ -1,0 +1,38 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  &.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.modal__body {
+  position: relative;
+  padding: 25px;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  min-width: 925px;
+}
+.modal__icon {
+  cursor: pointer;
+  position: absolute;
+  top: 13px;
+  right: -40px;
+
+  svg {
+    transition: transform 0.1s ease-in-out 0s;
+
+    &:hover {
+      transform: scale(1.11);
+    }
+  }
+
+  svg path {
+    fill: #fff;
+  }
+}
