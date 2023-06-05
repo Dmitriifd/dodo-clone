@@ -1,4 +1,5 @@
 import { CartDrawer } from 'components/CartDrawer';
+import { Counter } from 'components/Counter/Counter';
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import { NavMenu } from 'components/NavMenu';
