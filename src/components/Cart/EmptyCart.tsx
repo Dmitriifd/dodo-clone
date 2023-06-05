@@ -1,6 +1,6 @@
 import empty from 'assets/img/emptyCart.svg';
 import { CartDrawerHeader } from './CartDrawerHeader';
-import './CartDrawer.scss';
+import './Cart.scss';
 
 const EmptyCart = () => {
   return (
