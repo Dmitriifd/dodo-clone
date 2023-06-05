@@ -38,8 +38,6 @@
   }
 }
 
-.drawer__wrapper {
-}
 .drawer__button {
   margin: 0px;
   padding: 0px;
@@ -56,14 +54,9 @@
     transform: scale(1.1) rotate(180deg);
   }
 }
-.drawer__content {
-}
+
 .drawer__header {
   padding: 0px 16px;
-}
-.drawer__body {
-}
-.drawer__footer {
 }
 
 .empty-wrapper {
@@ -81,21 +74,21 @@
   flex-direction: column;
   flex-grow: 1;
 }
+
 .empty-image {
   margin-bottom: 20px;
 }
+
 .empty-title {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 20px;
 }
+
 .empty-cart-text {
   max-width: 260px;
   text-align: center;
   font-size: 14px;
-}
-
-.empty-logo {
 }
 
 .drawer-header {
@@ -151,11 +144,13 @@
   background: rgb(255, 255, 255);
   margin-bottom: 8px;
 }
+
 .cart-item__img {
   width: 64px;
   height: 64px;
   margin-right: 16px;
 }
+
 .cart-item__btn {
   position: absolute;
   top: 16px;
@@ -163,13 +158,13 @@
   width: 16px;
   height: 16px;
 }
+
 .cart-item__content {
   display: flex;
   border-bottom: 1px solid rgb(226, 226, 233);
   padding-bottom: 12px;
 }
-.cart-item__info {
-}
+
 .cart-item__title {
   font-weight: 500;
   margin-bottom: 5px;
@@ -186,5 +181,83 @@
   justify-content: space-between;
   margin-top: 12px;
 }
-.cart-item__price {
+
+.drawer__footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.cart-footer {
+  padding: 16px 24px 24px;
+  background-color: #fff;
+}
+
+.cart-footer__input {
+  width: 100%;
+  margin-bottom: 16px;
+  height: 20px;
+  outline: none;
+  &::placeholder {
+    color: rgb(186, 186, 197);
+  }
+}
+.cart-footer__order {
+  border-top: 1px solid rgb(226, 226, 233);
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.cart-footer__info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 500;
+
+  &.price {
+    margin-top: 16px;
+    font-size: 16px;
+  }
+}
+.info-button {
+  position: relative;
+  top: 3px;
+  svg {
+    margin-left: 8px;
+  }
+}
+.cart-footer__total {
+  border-top: 1px solid rgb(226, 226, 233);
+}
+.cart-footer__btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 54px 12px 48px;
+  background-color: rgb(255, 105, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 90px;
+  height: 48px;
+  font-weight: 500;
+  margin-top: 16px;
+  transition-property: background-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    background-color: rgb(232, 97, 0);
+  }
+
+  svg {
+    position: absolute;
+    right: 10px;
+  }
+
+  svg path {
+    stroke: #fff;
+  }
 }

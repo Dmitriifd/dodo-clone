@@ -5,6 +5,7 @@ import { EmptyCart } from './EmptyCart';
 import { CartDrawerHeader } from './CartDrawerHeader';
 import './Cart.scss';
 import { CartItem } from './CartItem';
+import { CartFooter } from './CartFooter';
 
 const cartItemData = [
   {
@@ -59,7 +60,9 @@ const CartDrawer = ({ isOpenCart, toggleCart }: any) => {
                 <CartItem key={cartItem.id} {...cartItem} />
               ))}
             </div>
-            <div className="drawer__footer"></div>
+            <div className="drawer__footer">
+              <CartFooter />
+            </div>
           </div>
         )}
       </div>
