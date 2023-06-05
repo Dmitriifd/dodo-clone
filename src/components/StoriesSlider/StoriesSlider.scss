@@ -38,6 +38,7 @@
   font-size: 28px;
   font-weight: 700;
   padding: 5px;
+  pointer-events: auto;
 }
 
 .stories .slider-navigation {
@@ -46,6 +47,7 @@
   justify-content: space-between;
   width: calc(100% - 40px);
   position: absolute;
+  pointer-events: none;
   top: 50%;
   left: 20px;
   transform: translateY(-50%);

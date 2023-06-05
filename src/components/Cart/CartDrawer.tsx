@@ -6,6 +6,7 @@ import { CartDrawerHeader } from './CartDrawerHeader';
 import './Cart.scss';
 import { CartItem } from './CartItem';
 import { CartFooter } from './CartFooter';
+import { CartSlider } from './CartSlider';
 
 const cartItemData = [
   {
@@ -21,7 +22,7 @@ const cartItemData = [
     title: 'Пицца от шефа',
     desc: 'Средняя 30 см, традиционное тесто + томаты',
     price: '1 038 ₽'
-  },
+  }
 ];
 
 const CartDrawer = ({ isOpenCart, toggleCart }: any) => {
@@ -59,6 +60,10 @@ const CartDrawer = ({ isOpenCart, toggleCart }: any) => {
               {cartItemData.map((cartItem) => (
                 <CartItem key={cartItem.id} {...cartItem} />
               ))}
+            </div>
+            <div className="drawer__slider">
+              <h3 className="drawer__slider-title">Добавить к заказу?</h3>
+              <CartSlider />
             </div>
             <div className="drawer__footer">
               <CartFooter />
