@@ -26,7 +26,7 @@
   transition-property: transform;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.5, 1, 0.5, 1);
-  transform: translateX(430px);
+  transform: translateX(100%);
   z-index: 1000;
 
   &.active {
@@ -184,11 +184,24 @@
   margin-top: 12px;
 }
 
-.drawer__footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  left: 0;
+.drawer__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(57, 57, 57, 0.2);
+    border-radius: 4px;
+  }
 }
 
 .cart-footer {
@@ -294,6 +307,10 @@
 }
 .cart-slider .swiper-slide:nth-child(1) {
   width: 80px;
+}
+
+.drawer__slider {
+  flex: 1 1 auto;
 }
 
 .drawer__slider-title {
