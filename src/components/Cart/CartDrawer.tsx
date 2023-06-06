@@ -52,7 +52,7 @@ const CartDrawer = ({ isOpenCart, toggleCart }: any) => {
           <EmptyCart />
         ) : (
           <div className="drawer__content cart">
-            <CartDrawerHeader />
+            <CartDrawerHeader toggleCart={toggleCart} />
             <div className="drawer__header">
               <h3 className="cart__title">2 товара на 1 038 ₽</h3>
             </div>

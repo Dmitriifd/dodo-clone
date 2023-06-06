@@ -1,9 +1,6 @@
 import { Link } from 'react-scroll';
 import { ReactComponent as ArrowButton } from 'assets/img/arrow-button.svg';
 import { ReactComponent as Logo } from 'assets/img/pizza.svg';
-// import { ReactComponent as GeoIcon } from 'assets/img/geo.svg';
-// import { ReactComponent as PhoneIcon } from 'assets/img/phone-icon.svg';
-// import { ReactComponent as GoogleIcon } from 'assets/img/google-play-icon.svg';
 import clsx from 'clsx';
 import './NavMenu.scss';
 
@@ -12,11 +9,6 @@ const NavMenu = ({ inView, isOpen, toggleCart }: any) => {
     <nav
       className={clsx('header__menu', { fixed: !inView, active: isOpen })}>
       <div className="header__menu-container">
-        {/* <a href="#" className="header__menu-city grid">
-          <GeoIcon />
-          <p>Москва</p>
-          <span>Изменить</span>
-        </a> */}
         <div className="header__menu-wrapper">
           <Logo width={32} height={32} className="header__menu-logo" />
           <ul className="header__menu-list">
@@ -97,14 +89,6 @@ const NavMenu = ({ inView, isOpen, toggleCart }: any) => {
             </li>
           </ul>
         </div>
-        {/* <a href="#" className="header__menu-phone grid">
-          <PhoneIcon width={22} height={22} />
-          <p>8 800 300-00-00</p>
-          <span>Звонок бесплатный</span>
-        </a>
-        <a href="#" className="header__menu-mobile">
-          <GoogleIcon />
-        </a> */}
         <button className="header__basket-btn btn" onClick={toggleCart}>
           Корзина
           <div className="divider"></div>

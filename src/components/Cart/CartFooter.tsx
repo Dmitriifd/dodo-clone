@@ -24,8 +24,8 @@ const CartFooter = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M8 13.5a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM8 15A7 7 0 108 1a7 7 0 000 14z"
                   fill="#000"></path>
                 <path
@@ -41,8 +41,8 @@ const CartFooter = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16" width={14} height={14}>
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M7.5.75c.41 0 .75.34.75.75V3h.25a5 5 0 010 10h-.25v1.5a.75.75 0 01-1.5 0V13H4.07c-.38 0-.56 0-.7-.07a.67.67 0 01-.3-.3C3 12.5 3 12.32 3 11.94V4.07c0-.38 0-.56.07-.7a.67.67 0 01.3-.3C3.5 3 3.68 3 4.06 3h2.68V1.5c0-.41.34-.75.75-.75zm-3 10.75h4a3.5 3.5 0 100-7h-4v7z"
                 fill="#000"></path>
             </svg>
@@ -65,9 +65,9 @@ const CartFooter = () => {
             <path
               d="M10 18l6-6-6-6"
               stroke="#000"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></path>
           </svg>
         </button>
       </div>
