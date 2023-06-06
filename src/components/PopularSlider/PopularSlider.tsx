@@ -51,11 +51,45 @@ const PopularSlider = () => {
 
   const breakpoints = {
     320: {
+      spaceBetween: 10,
+      slidesPerView: 1
+    },
+    375: {
+      slidesPerView: 1.1,
+      spaceBetween: 10
+    },
+    400: {
+      slidesPerView: 1.2,
+      spaceBetween: 10
+    },
+    480: {
+      slidesPerView: 1.5,
+      spaceBetween: 10
+    },
+    580: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    680: {
+      slidesPerView: 2.2,
+      spaceBetween: 10
+    },
+    780: {
+      slidesPerView: 2.6,
+      spaceBetween: 10
+    },
+    922: {
+      slidesPerView: 3,
       spaceBetween: 10
     },
     1024: {
+      slidesPerView: 3.5,
+      spaceBetween: 10
+    },
+    1200: {
+      slidesPerView: 4,
       spaceBetween: 25
-    }
+    },
   };
 
   return (
@@ -64,15 +98,12 @@ const PopularSlider = () => {
       <div className="popular__container">
         <Swiper
           breakpoints={breakpoints}
-          slidesPerView={4}
-          spaceBetween={25}
           navigation={{
             prevEl: prevRef.current,
             nextEl: nextRef.current
           }}
           modules={[Navigation]}
-          onInit={() => setInit(true)}
-          className="mySwiper">
+          onInit={() => setInit(true)}>
           {sliderData.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="popular__slide-item">
