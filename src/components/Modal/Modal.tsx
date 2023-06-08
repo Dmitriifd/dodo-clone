@@ -1,13 +1,12 @@
-import { ReactNode } from 'react';
-import { ReactComponent as CloseIcon } from 'assets/img/close-drawer-icon.svg';
+import { ReactNode, useState } from 'react';
 import { clsx } from 'clsx';
+import { ReactComponent as CloseIcon } from 'assets/img/close-drawer-icon.svg';
 import { ReactComponent as RadiusM } from 'assets/img/radius-m.svg';
 import { ReactComponent as RadiusL } from 'assets/img/radius-x.svg';
 import { ReactComponent as InfoIcon } from 'assets/img/modal-info-icon.svg';
-import { ReactComponent as CheckIcon } from 'assets/img/button-selected.svg';
 import trad from 'assets/pizza/trad.png';
 import thin from 'assets/pizza/thin.png';
-
+import { ModalIngredientButton } from './ModalIngredientButton';
 import './Modal.scss';
 
 interface ModalProps {
@@ -93,6 +92,20 @@ const modalDataButtons = [
 ];
 
 const Modal = ({ children, visible, setVisible }: ModalProps) => {
+  const [selectSize, setSelectSize] = useState<string | null>('middle');
+  const [selectType, setSelectType] = useState<string | null>('trad');
+
+  function handleButtonSize(e: any) {
+    if (e.target.dataset.type === 'small') {
+      setSelectType('trad');
+    }
+    setSelectSize(e.target.dataset.type);
+  }
+
+  function handleButtonType(e: any) {
+    setSelectType(e.target.dataset.type);
+  }
+
   return (
     <div
       className={clsx('modal', {
@@ -106,8 +119,8 @@ const Modal = ({ children, visible, setVisible }: ModalProps) => {
         {children}
         <div className="modal__wrap">
           <div className="modal__left">
-            <div className="modal__img">
-              <img src={trad} alt="Традиционная" />
+            <div className={clsx(['modal__img', selectSize])}>
+              <img src={selectType === 'trad' ? trad : thin} alt="Традиционная" />
             </div>
             <div className="modal__radius-m">
               <RadiusM />
@@ -131,34 +144,57 @@ const Modal = ({ children, visible, setVisible }: ModalProps) => {
                 Пикантная пепперони, увеличенная порция моцареллы, томаты,
                 фирменный томатный соус
               </div>
-              <div className="modal-product__sizes modal-product__type">
-                <button className="active">Маленькая</button>
-                <button>Средняя</button>
-                <button>Большая</button>
+              <div
+                className={clsx([
+                  'modal-product__sizes modal-product__type',
+                  selectSize
+                ])}>
+                <button
+                  className="modal-product__btn"
+                  data-type="small"
+                  onClick={handleButtonSize}>
+                  Маленькая
+                </button>
+                <button
+                  className="modal-product__btn"
+                  data-type="middle"
+                  onClick={handleButtonSize}>
+                  Средняя
+                </button>
+                <button
+                  className="modal-product__btn"
+                  data-type="big"
+                  onClick={handleButtonSize}>
+                  Большая
+                </button>
               </div>
-              <div className="modal-product__types modal-product__type">
-                <button className="active">Традиционное</button>
-                <button>Тонкое</button>
+              <div
+                className={clsx([
+                  'modal-product__sizes modal-product__type',
+                  selectType
+                ])}>
+                <button
+                  className="modal-product__btn"
+                  data-type="trad"
+                  onClick={handleButtonType}>
+                  Традиционное
+                </button>
+                <button
+                  disabled={selectSize === 'small'}
+                  className="modal-product__btn"
+                  data-type="thin"
+                  onClick={handleButtonType}>
+                  Тонкое
+                </button>
               </div>
               <div className="modal-product__wrap product-ingredients">
                 <h2 className="product-ingredients__title">
                   Добавить по вкусу
                 </h2>
                 <ul className="product-ingredients__list">
-                  {modalDataButtons.map(({id, title, price, img}) => (
-                    <li key={id} className="product-ingredients__item">
-                      <button className="product-ingredients__btn ingredients-card active">
-                        <img
-                          className="ingredients-card__img"
-                          src={img}
-                          alt={title}
-                        />
-                        <h3 className="ingredients-card__title">
-                          {title}
-                        </h3>
-                        <p className="ingredients-card__price">{price}</p>
-                        <CheckIcon />
-                      </button>
+                  {modalDataButtons.map((item) => (
+                    <li key={item.id} className="product-ingredients__item">
+                      <ModalIngredientButton {...item} />
                     </li>
                   ))}
                 </ul>
