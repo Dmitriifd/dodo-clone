@@ -1,11 +1,11 @@
 import empty from 'assets/img/emptyCart.svg';
-import { CartDrawerHeader } from './CartDrawerHeader';
+import { CartHeader } from './CartHeader';
 import './Cart.scss';
 
-const EmptyCart = () => {
+const CartEmpty = () => {
   return (
     <section className="empty">
-      <CartDrawerHeader />
+      <CartHeader />
       <div className="empty-wrapper">
         <img src={empty} className="empty-image" />
         <h2 className="empty-title">Ой, пусто!</h2>
@@ -18,4 +18,4 @@ const EmptyCart = () => {
   );
 };
 
-export { EmptyCart };
+export { CartEmpty };

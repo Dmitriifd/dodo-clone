@@ -1,4 +1,4 @@
-import { CartDrawer } from 'components/Cart';
+import { Cart } from 'components/Cart';
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import { NavMenu } from 'components/NavMenu';
@@ -144,7 +144,7 @@ function App() {
       </main>
       <StickyCart toggleCart={toggleCart} />
       <Footer />
-      <CartDrawer isOpenCart={isOpenCart} toggleCart={toggleCart} />
+      <Cart isOpenCart={isOpenCart} toggleCart={toggleCart} />
     </>
   );
 }

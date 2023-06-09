@@ -1,4 +1,4 @@
-.drawer-overlay {
+.cart-overlay {
   width: 0px;
   height: 0px;
   overflow: hidden;
@@ -16,7 +16,7 @@
   }
 }
 
-.drawer__wrapper {
+.cart__wrapper {
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -38,7 +38,7 @@
   }
 }
 
-.drawer__button {
+.cart__close-button {
   margin: 0px;
   padding: 0px;
   cursor: pointer;
@@ -59,7 +59,7 @@
   }
 }
 
-.drawer__header {
+.cart__header {
   padding: 0px 16px;
 }
 
@@ -95,7 +95,7 @@
   font-size: 14px;
 }
 
-.drawer-header {
+.cart-mobile-header {
   display: flex;
   align-items: center;
   background: rgb(255, 255, 255);
@@ -115,13 +115,13 @@
   }
 }
 
-.drawer-burger {
+.cart-burger-icon {
   margin-left: auto;
   width: 48px;
   cursor: pointer;
 }
 
-.drawer-back {
+.caart-back-btn {
   padding: 0 16px;
   border-right: 1px solid rgb(243, 243, 247);
   height: 100%;
@@ -130,7 +130,7 @@
   cursor: pointer;
 }
 
-.empty-logo {
+.cart-mobile-logo {
   margin-left: 16px;
 }
 
@@ -188,7 +188,7 @@
   margin-top: 12px;
 }
 
-.drawer__content {
+.cart__content {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -316,11 +316,11 @@
   width: 80px;
 }
 
-.drawer__slider {
+.cart__slider {
   flex: 1 1 auto;
 }
 
-.drawer__slider-title {
+.cart__slider-title {
   font-weight: 500;
   font-size: 18px;
   margin-left: 16px;

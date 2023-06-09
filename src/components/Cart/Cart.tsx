@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 import { ReactComponent as CloseIcon } from 'assets/img/close-drawer-icon.svg';
 import { useEffect, useState } from 'react';
-import { EmptyCart } from './EmptyCart';
-import { CartDrawerHeader } from './CartDrawerHeader';
-import './Cart.scss';
+import { CartEmpty } from './CartEmpty';
+import { CartHeader } from './CartHeader';
 import { CartItem } from './CartItem';
 import { CartFooter } from './CartFooter';
 import { CartSlider } from './CartSlider';
+import './Cart.scss';
 
 const cartItemData = [
   {
@@ -25,8 +25,8 @@ const cartItemData = [
   }
 ];
 
-const CartDrawer = ({ isOpenCart, toggleCart }: any) => {
-  const [isEmpty, setIsEmpty] = useState(false);
+const Cart = ({ isOpenCart, toggleCart }: any) => {
+  const [isEmpty, _] = useState(false);
 
   useEffect(() => {
     if (isOpenCart) {
@@ -38,34 +38,34 @@ const CartDrawer = ({ isOpenCart, toggleCart }: any) => {
 
   return (
     <div
-      className={clsx('drawer-overlay', { active: isOpenCart })}
+      className={clsx('cart-overlay', { active: isOpenCart })}
       onClick={toggleCart}>
       <div
-        className={clsx('drawer__wrapper', { active: isOpenCart })}
+        className={clsx('cart__wrapper', { active: isOpenCart })}
         onClick={(e) => e.stopPropagation()}>
         {isOpenCart && (
-          <button className="drawer__button" onClick={toggleCart}>
+          <button className="cart__close-button" onClick={toggleCart}>
             <CloseIcon />
           </button>
         )}
         {isEmpty ? (
-          <EmptyCart />
+          <CartEmpty />
         ) : (
-          <div className="drawer__content cart">
-            <CartDrawerHeader toggleCart={toggleCart} />
-            <div className="drawer__header">
+          <div className="cart__content cart">
+            <CartHeader toggleCart={toggleCart} />
+            <div className="cart__header">
               <h3 className="cart__title">2 товара на 1 038 ₽</h3>
             </div>
-            <div className="drawer__body">
+            <div className="cart__body">
               {cartItemData.map((cartItem) => (
                 <CartItem key={cartItem.id} {...cartItem} />
               ))}
             </div>
-            <div className="drawer__slider">
-              <h3 className="drawer__slider-title">Добавить к заказу?</h3>
+            <div className="cart__slider">
+              <h3 className="cart__slider-title">Добавить к заказу?</h3>
               <CartSlider />
             </div>
-            <div className="drawer__footer">
+            <div className="cart__footer">
               <CartFooter />
             </div>
           </div>
@@ -75,4 +75,4 @@ const CartDrawer = ({ isOpenCart, toggleCart }: any) => {
   );
 };
 
-export { CartDrawer };
+export { Cart };
