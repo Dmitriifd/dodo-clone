@@ -3,11 +3,14 @@ import { ReactComponent as ArrowButton } from 'assets/img/arrow-button.svg';
 import { ReactComponent as Logo } from 'assets/img/pizza.svg';
 import clsx from 'clsx';
 import './NavMenu.scss';
+import { useAppDispatch } from 'redux/store';
+import { openCart } from 'redux/cart/slice';
 
-const NavMenu = ({ inView, isOpen, toggleCart }: any) => {
+const NavMenu = ({ inView }: any) => {
+  const dispatch = useAppDispatch();
+
   return (
-    <nav
-      className={clsx('header__menu', { fixed: !inView, active: isOpen })}>
+    <nav className={clsx('header__menu', { fixed: !inView })}>
       <div className="header__menu-container">
         <div className="header__menu-wrapper">
           <Logo width={32} height={32} className="header__menu-logo" />
@@ -89,7 +92,9 @@ const NavMenu = ({ inView, isOpen, toggleCart }: any) => {
             </li>
           </ul>
         </div>
-        <button className="header__basket-btn btn" onClick={toggleCart}>
+        <button
+          className="header__basket-btn btn"
+          onClick={() => dispatch(openCart())}>
           Корзина
           <div className="divider"></div>
           <div className="quantity">2</div>

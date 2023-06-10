@@ -7,6 +7,8 @@ import { CartItem } from './CartItem';
 import { CartFooter } from './CartFooter';
 import { CartSlider } from './CartSlider';
 import './Cart.scss';
+import { useAppDispatch, useAppSelector } from 'redux/store';
+import { closeCart } from 'redux/cart/slice';
 
 const cartItemData = [
   {
@@ -25,8 +27,10 @@ const cartItemData = [
   }
 ];
 
-const Cart = ({ isOpenCart, toggleCart }: any) => {
+const Cart = () => {
   const [isEmpty, _] = useState(false);
+  const { isOpenCart } = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (isOpenCart) {
@@ -39,12 +43,14 @@ const Cart = ({ isOpenCart, toggleCart }: any) => {
   return (
     <div
       className={clsx('cart-overlay', { active: isOpenCart })}
-      onClick={toggleCart}>
+      onClick={() => dispatch(closeCart())}>
       <div
         className={clsx('cart__wrapper', { active: isOpenCart })}
         onClick={(e) => e.stopPropagation()}>
         {isOpenCart && (
-          <button className="cart__close-button" onClick={toggleCart}>
+          <button
+            className="cart__close-button"
+            onClick={() => dispatch(closeCart())}>
             <CloseIcon />
           </button>
         )}
@@ -52,7 +58,7 @@ const Cart = ({ isOpenCart, toggleCart }: any) => {
           <CartEmpty />
         ) : (
           <div className="cart__content cart">
-            <CartHeader toggleCart={toggleCart} />
+            <CartHeader />
             <div className="cart__header">
               <h3 className="cart__title">2 товара на 1 038 ₽</h3>
             </div>

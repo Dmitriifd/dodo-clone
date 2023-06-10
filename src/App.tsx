@@ -6,49 +6,12 @@ import { PopularSlider } from 'components/PopularSlider';
 import { ProductCard } from 'components/ProductCard';
 import { StickyCart } from 'components/StickyCart';
 import { StoriesSlider } from 'components/StoriesSlider';
+import { pizzaData } from 'data/pizzaData';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-const tempData = [
-  {
-    id: 1,
-    title: 'Пепперони фреш',
-    description:
-      'Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус',
-    price: '289 ₽',
-    img: 'assets/pizza/1.png'
-  },
-  {
-    id: 2,
-    title: 'Пепперони фреш',
-    description:
-      'Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус',
-    price: '289 ₽',
-    img: 'assets/pizza/1.png'
-  },
-  {
-    id: 3,
-    title: 'Пепперони фреш',
-    description:
-      'Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус',
-    price: '289 ₽',
-    img: 'assets/pizza/1.png'
-  },
-  {
-    id: 4,
-    title: 'Пепперони фреш',
-    description:
-      'Пикантная пепперони, увеличенная порция моцареллы, томаты, фирменный томатный соус',
-    price: '289 ₽',
-    img: 'assets/pizza/1.png'
-  }
-];
-
 function App() {
-  const [isOpenCart, setIsOpenCart] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const { ref, inView } = useInView({ threshold: 1, initialInView: true });
-
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -64,21 +27,12 @@ function App() {
 
   const isMobile = windowWidth < 992;
 
-  const toggleCart = () => {
-    setIsOpenCart(!isOpenCart);
-  };
-
   return (
     <>
-      <Header
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        ref1={ref}
-        isMobile={isMobile}
-      />
+      <Header ref1={ref} isMobile={isMobile} />
 
       {!isMobile && (
-        <NavMenu inView={inView} isOpen={isOpen} toggleCart={toggleCart} />
+        <NavMenu inView={inView} />
       )}
 
       <main className="main">
@@ -87,7 +41,7 @@ function App() {
 
         <div className="mobile-nav" ref={isMobile ? ref : null}>
           {isMobile && (
-            <NavMenu inView={inView} isOpen={isOpen} toggleCart={toggleCart} />
+            <NavMenu inView={inView} />
           )}
         </div>
 
@@ -95,13 +49,13 @@ function App() {
           <div className="pizza__container">
             <h2 className="pizza__title title">Пицца</h2>
             <div className="pizza__wrapper grid-wrapper">
-              {tempData.map((item) => (
+              {pizzaData.map((item) => (
                 <ProductCard key={item.id} {...item} />
               ))}
             </div>
           </div>
         </section>
-        <section className="combo section" id="combo">
+        {/* <section className="combo section" id="combo">
           <div className="combo__container">
             <h2 className="combo__title title">Комбо</h2>
             <div className="combo__wrapper grid-wrapper">
@@ -140,11 +94,11 @@ function App() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
-      <StickyCart toggleCart={toggleCart} />
+      <StickyCart />
       <Footer />
-      <Cart isOpenCart={isOpenCart} toggleCart={toggleCart} />
+      <Cart />
     </>
   );
 }

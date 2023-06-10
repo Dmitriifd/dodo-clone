@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 import { ReactComponent as Star } from 'assets/img/star.svg';
 import { ReactComponent as Coin } from 'assets/img/dodocoin.svg';
@@ -10,7 +10,9 @@ import { ReactComponent as GoogleIcon } from 'assets/img/google-play-icon.svg';
 import logo from 'assets/img/pizza.svg';
 import './Header.scss';
 
-const Header = ({ ref1, isOpen, setIsOpen, isMobile }: any) => {
+const Header = ({ ref1, isMobile }: any) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -57,7 +59,11 @@ const Header = ({ ref1, isOpen, setIsOpen, isMobile }: any) => {
             </a>
             <button className="header__auth-btn btn">Войти</button>
             <button className="header__burger">
-              <Burger width={32} height={32} onClick={toggleMenu} />
+              <Burger
+                width={32}
+                height={32}
+                onClick={toggleMenu}
+              />
             </button>
           </div>
         </div>

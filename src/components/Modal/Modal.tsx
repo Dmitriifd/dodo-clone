@@ -4,15 +4,16 @@ import { ReactComponent as CloseIcon } from 'assets/img/close-drawer-icon.svg';
 import { ReactComponent as RadiusM } from 'assets/img/radius-m.svg';
 import { ReactComponent as RadiusL } from 'assets/img/radius-x.svg';
 import { ReactComponent as InfoIcon } from 'assets/img/modal-info-icon.svg';
-import trad from 'assets/pizza/trad.png';
-import thin from 'assets/pizza/thin.png';
 import { ModalIngredientButton } from './ModalIngredientButton';
+import { selectWeight } from 'utils/selectWeight';
 import './Modal.scss';
 
 interface ModalProps {
   children?: ReactNode;
   visible?: boolean;
   setVisible: (arg: boolean) => void;
+  locked: Boolean;
+  setLocked: (arg: boolean) => void;
 }
 
 const modalDataButtons = [
@@ -91,36 +92,55 @@ const modalDataButtons = [
   { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
 ];
 
-const Modal = ({ children, visible, setVisible }: ModalProps) => {
-  const [selectSize, setSelectSize] = useState<string | null>('middle');
-  const [selectType, setSelectType] = useState<string | null>('trad');
+const Modal = ({
+  children,
+  visible,
+  setVisible,
+  setLocked,
+  locked,
+  items
+}: any) => {
+  const { title, desc, price, types, weight, sizes, diameter, images } = items;
 
-  function handleButtonSize(e: any) {
-    if (e.target.dataset.type === 'small') {
-      setSelectType('trad');
+  const [selectSize, setSelectSize] = useState(1);
+  const [selectType, setSelectType] = useState(0);
+
+
+  function handleSelectSize(num: number) {
+    if (num === 0) {
+      setSelectType(0);
     }
-    setSelectSize(e.target.dataset.type);
+    setSelectSize(num);
   }
 
-  function handleButtonType(e: any) {
-    setSelectType(e.target.dataset.type);
+  function handleSelectType(num: number) {
+    setSelectType(num);
   }
+
+  const closeModal = () => {
+    setVisible(false);
+    setLocked(!locked);
+  };
 
   return (
     <div
       className={clsx('modal', {
         active: visible
       })}
-      onClick={() => setVisible(false)}>
+      onClick={closeModal}>
       <div className="modal__body" onClick={(e) => e.stopPropagation()}>
-        <div className="modal__icon" onClick={() => setVisible(false)}>
+        <div className="modal__icon" onClick={closeModal}>
           <CloseIcon />
         </div>
         {children}
         <div className="modal__wrap">
           <div className="modal__left">
-            <div className={clsx(['modal__img', selectSize])}>
-              <img src={selectType === 'trad' ? trad : thin} alt="Традиционная" />
+            <div
+              className={clsx(['modal__img', `modal__img-size${selectSize}`])}>
+              <img
+                src={selectType === 0 ? images.trad : images.thin}
+                alt={title}
+              />
             </div>
             <div className="modal__radius-m">
               <RadiusM />
@@ -132,60 +152,40 @@ const Modal = ({ children, visible, setVisible }: ModalProps) => {
           <div className="modal__right modal-product">
             <div className="modal-product__inner">
               <div className="modal-product__head">
-                <h2 className="modal-product__title">Пепперони фреш</h2>
+                <h2 className="modal-product__title">{title}</h2>
                 <button>
                   <InfoIcon />
                 </button>
               </div>
               <p className="modal-product__info">
-                25 см, традиционное тесто, 400 г
+                {diameter[selectSize]} см, {types[selectType].toLowerCase()}{' '}
+                тесто, {selectWeight(selectSize, selectType, weight)} г
               </p>
-              <div className="modal-product__desc">
-                Пикантная пепперони, увеличенная порция моцареллы, томаты,
-                фирменный томатный соус
+              <div className="modal-product__desc">{desc}</div>
+              <div
+                className={`modal-product__sizes modal-product__type modal-product__size-${selectSize}`}>
+                {sizes.map((size: string, i: number) => (
+                  <button
+                    key={i}
+                    className="modal-product__btn"
+                    data-type="small"
+                    onClick={() => handleSelectSize(i)}>
+                    {size}
+                  </button>
+                ))}
               </div>
               <div
-                className={clsx([
-                  'modal-product__sizes modal-product__type',
-                  selectSize
-                ])}>
-                <button
-                  className="modal-product__btn"
-                  data-type="small"
-                  onClick={handleButtonSize}>
-                  Маленькая
-                </button>
-                <button
-                  className="modal-product__btn"
-                  data-type="middle"
-                  onClick={handleButtonSize}>
-                  Средняя
-                </button>
-                <button
-                  className="modal-product__btn"
-                  data-type="big"
-                  onClick={handleButtonSize}>
-                  Большая
-                </button>
-              </div>
-              <div
-                className={clsx([
-                  'modal-product__sizes modal-product__type',
-                  selectType
-                ])}>
-                <button
-                  className="modal-product__btn"
-                  data-type="trad"
-                  onClick={handleButtonType}>
-                  Традиционное
-                </button>
-                <button
-                  disabled={selectSize === 'small'}
-                  className="modal-product__btn"
-                  data-type="thin"
-                  onClick={handleButtonType}>
-                  Тонкое
-                </button>
+                className={`modal-product__sizes modal-product__type modal-product__type-${selectType}`}>
+                {types.map((type: string, i: number) => (
+                  <button
+                    key={i}
+                    disabled={selectSize === 0}
+                    className="modal-product__btn"
+                    data-type="trad"
+                    onClick={() => handleSelectType(i)}>
+                    {type}
+                  </button>
+                ))}
               </div>
               <div className="modal-product__wrap product-ingredients">
                 <h2 className="product-ingredients__title">
@@ -202,7 +202,7 @@ const Modal = ({ children, visible, setVisible }: ModalProps) => {
             </div>
 
             <button className="modal-product__button">
-              Добавить в корзину за 500 Р
+              Добавить в корзину за {price[selectSize]} Р
             </button>
           </div>
         </div>
