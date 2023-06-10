@@ -1,0 +1,23 @@
+.counter {
+  position: relative;
+  width: 96px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  color: rgb(92, 99, 112);
+  font-weight: 500;
+  background-color: rgb(243, 243, 247);
+  border-radius: 90px;
+  justify-content: space-between;
+  padding: 7px 8px;
+  margin-left: auto;
+}
+
+.counter-amount {
+  opacity: 0.7;
+}
+
+.counter__button {
+  opacity: 0.7;
+  padding: 0px 8px;
+}

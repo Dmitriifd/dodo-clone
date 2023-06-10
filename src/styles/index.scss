@@ -47,7 +47,7 @@ $responsiveType: 1;
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  // overflow: hidden;
 
   // Прижимаем footer
   > main {
@@ -57,6 +57,17 @@ $responsiveType: 1;
   // Фикс для слайдеров
   > * {
     min-width: 0;
+  }
+}
+
+main {
+  overflow: hidden;
+}
+
+.section {
+  margin-bottom: 60px;
+  @media (max-width: 869px) {
+    margin-bottom: 20px;
   }
 }
 
@@ -84,6 +95,40 @@ $responsiveType: 1;
   opacity: 0;
   transform: translateX(-5px);
   opacity: 0;
+}
+
+.title {
+  color: var(--main-color);
+  font-weight: 500;
+  font-size: 24px;
+  padding: 32px 0;
+
+  @media (min-width: 870px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 991px) {
+    padding-top: 10px;
+  }
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 40px;
+  row-gap: 75px;
+
+  @media (max-width: 869px) {
+    row-gap: 30px;
+  }
+
+  @media (min-width: 870px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  @media (min-width: 1110px) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
 }
 
 // Ограничивающий контейнер
