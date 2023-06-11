@@ -6,13 +6,14 @@ import { PopularSlider } from 'components/PopularSlider';
 import { ProductCard } from 'components/ProductCard';
 import { StickyCart } from 'components/StickyCart';
 import { StoriesSlider } from 'components/StoriesSlider';
-import { pizzaData } from 'data/pizzaData';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useGetProductsQuery } from 'redux/api/productsApi';
 
 function App() {
   const { ref, inView } = useInView({ threshold: 1, initialInView: true });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const { data = [], isLoading } = useGetProductsQuery('');
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,25 +32,21 @@ function App() {
     <>
       <Header ref1={ref} isMobile={isMobile} />
 
-      {!isMobile && (
-        <NavMenu inView={inView} />
-      )}
+      {!isMobile && <NavMenu inView={inView} />}
 
       <main className="main">
         <StoriesSlider />
         <PopularSlider />
 
         <div className="mobile-nav" ref={isMobile ? ref : null}>
-          {isMobile && (
-            <NavMenu inView={inView} />
-          )}
+          {isMobile && <NavMenu inView={inView} />}
         </div>
 
         <section className="pizza section" id="pizza">
           <div className="pizza__container">
             <h2 className="pizza__title title">Пицца</h2>
             <div className="pizza__wrapper grid-wrapper">
-              {pizzaData.map((item) => (
+              {data.map((item: any) => (
                 <ProductCard key={item.id} {...item} />
               ))}
             </div>
