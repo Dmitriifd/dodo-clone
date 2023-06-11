@@ -27,7 +27,7 @@ const productsSlice = createSlice({
     selectType(state, action: PayloadAction<number>) {
       state.activeType = action.payload;
     },
-    setCurrentPrice(state, action) {
+    setCurrentPrice(state, action: PayloadAction<number>) {
       state.currentPrice = state.ingredientsPrice + action.payload;
     },
     resetCurrentPrice(state) {
@@ -36,10 +36,10 @@ const productsSlice = createSlice({
       state.ingredientsPrice = 0;
       state.currentPrice = 0;
     },
-    addIngredient(state, action) {
+    addIngredient(state, action: PayloadAction<number>) {
       state.ingredientsPrice += action.payload;
     },
-    removeIngredient(state, action) {
+    removeIngredient(state, action: PayloadAction<number>) {
       state.ingredientsPrice -= action.payload;
     }
   }

@@ -1,23 +1,22 @@
 import { isMobile } from 'react-device-detect';
 import { Modal } from 'components/Modal';
-import { useState} from 'react';
+import { MouseEvent, useState} from 'react';
 import { useLockedBody } from 'usehooks-ts';
+import { IProduct } from 'types/product';
 import './ProductCard.scss';
 
 interface ProductCardProps {
-  img: string;
-  title: string;
-  description: string;
-  price: string;
-  id: number;
+  item: IProduct
 }
 
-const ProductCard = (item: any) => {
+const ProductCard = ({item}: ProductCardProps) => {
   const { img, title, desc, price } = item;
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [locked, setLocked] = useLockedBody(false, 'root');
 
-  function openModal(e: any) {
+  function openModal(
+    e: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLAnchorElement>
+  ) {
     e.preventDefault();
     setIsOpenModal(true);
     setLocked(!locked);
@@ -39,8 +38,8 @@ const ProductCard = (item: any) => {
           <img src={img} alt={title} />
         </a>
         <div className="product-card__body">
-          <h3 className="product-card__title" onClick={openModal}>
-            <a href="#" className="product-card__link">
+          <h3 className="product-card__title">
+            <a href="#" className="product-card__link" onClick={openModal}>
               {title}
             </a>
           </h3>

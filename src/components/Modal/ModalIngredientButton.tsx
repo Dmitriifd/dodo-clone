@@ -4,12 +4,22 @@ import { useState } from 'react';
 import { addIngredient, removeIngredient } from 'redux/products/slice';
 import { useAppDispatch } from 'redux/store';
 
-const ModalIngredientButton = ({ img, title, price }: any) => {
+interface ModalIngredientButtonProps {
+  title: string;
+  price: number;
+  img: string;
+}
+
+const ModalIngredientButton = ({
+  img,
+  title,
+  price
+}: ModalIngredientButtonProps) => {
   const [selected, setSelected] = useState(false);
 
   const dispatch = useAppDispatch();
 
-  function selectIngredient(price: any) {
+  function selectIngredient(price: number) {
     setSelected(!selected);
     if (!selected) {
       dispatch(addIngredient(price));

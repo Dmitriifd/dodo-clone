@@ -4,7 +4,6 @@ import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
 import { productsReducer } from './products/slice';
 import { productsApi } from './api/productsApi';
 
-
 const store = configureStore({
   reducer: {
     cart: cartReducer,

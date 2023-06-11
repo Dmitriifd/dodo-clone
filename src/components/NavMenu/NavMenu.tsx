@@ -2,11 +2,15 @@ import { Link } from 'react-scroll';
 import { ReactComponent as ArrowButton } from 'assets/img/arrow-button.svg';
 import { ReactComponent as Logo } from 'assets/img/pizza.svg';
 import clsx from 'clsx';
-import './NavMenu.scss';
 import { useAppDispatch } from 'redux/store';
 import { openCart } from 'redux/cart/slice';
+import './NavMenu.scss';
 
-const NavMenu = ({ inView }: any) => {
+interface NavMenuProps {
+  inView: boolean;
+}
+
+const NavMenu = ({ inView }: NavMenuProps) => {
   const dispatch = useAppDispatch();
 
   return (

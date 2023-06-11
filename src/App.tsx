@@ -46,8 +46,8 @@ function App() {
           <div className="pizza__container">
             <h2 className="pizza__title title">Пицца</h2>
             <div className="pizza__wrapper grid-wrapper">
-              {data.map((item: any) => (
-                <ProductCard key={item.id} {...item} />
+              {data.map((item) => (
+                <ProductCard key={item.id} item={item} />
               ))}
             </div>
           </div>

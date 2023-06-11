@@ -14,6 +14,7 @@ import {
   setCurrentPrice
 } from 'redux/products/slice';
 import './Modal.scss';
+import { IProduct } from 'types/product';
 
 interface ModalProps {
   children?: ReactNode;
@@ -21,6 +22,7 @@ interface ModalProps {
   setVisible: (arg: boolean) => void;
   locked: Boolean;
   setLocked: (arg: boolean) => void;
+  items: IProduct
 }
 
 const Modal = ({
@@ -30,7 +32,7 @@ const Modal = ({
   setLocked,
   locked,
   items
-}: any) => {
+}: ModalProps) => {
   const {
     title,
     desc,
@@ -132,7 +134,7 @@ const Modal = ({
                   Добавить по вкусу
                 </h2>
                 <ul className="product-ingredients__list">
-                  {ingredients.map((item: any) => (
+                  {ingredients.map((item) => (
                     <li key={item.id} className="product-ingredients__item">
                       <ModalIngredientButton {...item} />
                     </li>
