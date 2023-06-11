@@ -12,7 +12,7 @@ import {
   selectSize,
   selectType,
   setCurrentPrice
-} from 'redux/products/products';
+} from 'redux/products/slice';
 import './Modal.scss';
 
 interface ModalProps {
@@ -142,7 +142,7 @@ const Modal = ({
             </div>
 
             <button className="modal-product__button">
-              Добавить в корзину за {currentPrice} Р
+              Добавить в корзину за {currentPrice} ₽
             </button>
           </div>
         </div>

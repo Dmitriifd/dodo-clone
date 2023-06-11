@@ -50,8 +50,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -155,8 +155,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -223,7 +223,7 @@ export const pizzaData = [
       trad: 'assets/pizza/trad-3.webp',
       thin: 'assets/pizza/thin-3.webp'
     },
-     ingredients: [
+    ingredients: [
       {
         id: 1,
         title: 'Сливочная моцарелла',
@@ -260,8 +260,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -328,7 +328,7 @@ export const pizzaData = [
       trad: 'assets/pizza/trad-4.webp',
       thin: 'assets/pizza/thin-4.webp'
     },
-     ingredients: [
+    ingredients: [
       {
         id: 1,
         title: 'Сливочная моцарелла',
@@ -365,8 +365,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -470,8 +470,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -575,8 +575,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -680,8 +680,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -785,8 +785,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -853,7 +853,7 @@ export const pizzaData = [
       trad: 'assets/pizza/trad-9.webp',
       thin: 'assets/pizza/thin-9.webp'
     },
-     ingredients: [
+    ingredients: [
       {
         id: 1,
         title: 'Сливочная моцарелла',
@@ -890,8 +890,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -958,7 +958,7 @@ export const pizzaData = [
       trad: 'assets/pizza/trad-10.webp',
       thin: 'assets/pizza/thin-10.webp'
     },
-     ingredients: [
+    ingredients: [
       {
         id: 1,
         title: 'Сливочная моцарелла',
@@ -995,8 +995,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -1063,7 +1063,7 @@ export const pizzaData = [
       trad: 'assets/pizza/trad-11.webp',
       thin: 'assets/pizza/thin-11.webp'
     },
-     ingredients: [
+    ingredients: [
       {
         id: 1,
         title: 'Сливочная моцарелла',
@@ -1100,8 +1100,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
@@ -1205,8 +1205,8 @@ export const pizzaData = [
         price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',

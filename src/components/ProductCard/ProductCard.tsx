@@ -46,9 +46,9 @@ const ProductCard = (item: any) => {
           </h3>
           <p className="product-card__description">{desc}</p>
           <div className="product-card__footer">
-            <p className="product-card__price">от {price[0]}</p>
+            <p className="product-card__price">от {price[0]} ₽</p>
             <button className="product-card__button" onClick={openModal}>
-              {isMobile ? `от ${price[0]}` : 'Выбрать'}
+              {isMobile ? `от ${price[0]} ₽` : 'Выбрать'}
             </button>
           </div>
         </div>

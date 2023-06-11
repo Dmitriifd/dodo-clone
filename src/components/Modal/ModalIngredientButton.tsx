@@ -1,7 +1,7 @@
 import { ReactComponent as CheckIcon } from 'assets/img/button-selected.svg';
 import clsx from 'clsx';
 import { useState } from 'react';
-import { addIngredient, removeIngredient } from 'redux/products/products';
+import { addIngredient, removeIngredient } from 'redux/products/slice';
 import { useAppDispatch } from 'redux/store';
 
 const ModalIngredientButton = ({ img, title, price }: any) => {
@@ -26,7 +26,7 @@ const ModalIngredientButton = ({ img, title, price }: any) => {
       })}>
       <img className="ingredients-card__img" src={img} alt={title} />
       <h3 className="ingredients-card__title">{title}</h3>
-      <p className="ingredients-card__price">{price}</p>
+      <p className="ingredients-card__price">{price} ₽</p>
       <CheckIcon />
     </button>
   );
