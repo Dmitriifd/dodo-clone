@@ -1,21 +1,17 @@
-import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from 'redux/store';
+import { decreaseQuantity, increaseQuantity } from 'redux/cart/slice';
 import './Counter.scss';
 
-const Counter = () => {
-  const [count, setCount] = useState(1);
-
-  const countIncrement = () => {
-    setCount(count + 1);
-  };
-  const countDecrement = () => {
-    if (count) {
-      setCount(count - 1);
-    }
-  };
+const Counter = ({id}: {id: string}) => {
+  const dispatch = useAppDispatch()
+  const { orderList } = useAppSelector((state) => state.cart);
+  const count = orderList.find((item) => item.id === id)
 
   return (
     <div className="counter">
-      <button className="counter__button" onClick={countDecrement}>
+      <button
+        className="counter__button counter__button--minus"
+        onClick={() => dispatch(decreaseQuantity(id))}>
         <svg
           width="10"
           height="10"
@@ -24,8 +20,10 @@ const Counter = () => {
           <rect fill="#454B54" y="4" width="10" height="2" rx="1"></rect>
         </svg>
       </button>
-      <p className="counter-amount">{count}</p>
-      <button className="counter__button" onClick={countIncrement}>
+      <p className="counter-amount">{count?.quantity}</p>
+      <button
+        className="counter__button counter__button--plus"
+        onClick={() => dispatch(increaseQuantity(id))}>
         <svg
           width="10"
           height="10"
