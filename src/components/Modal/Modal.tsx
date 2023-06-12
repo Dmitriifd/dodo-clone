@@ -15,6 +15,9 @@ import {
 } from 'redux/products/slice';
 import './Modal.scss';
 import { IProduct } from 'types/product';
+import { addToCart } from 'redux/cart/slice';
+import { ICartItem } from 'types/cartItem';
+import { nanoid } from '@reduxjs/toolkit';
 
 interface ModalProps {
   children?: ReactNode;
@@ -22,7 +25,7 @@ interface ModalProps {
   setVisible: (arg: boolean) => void;
   locked: Boolean;
   setLocked: (arg: boolean) => void;
-  items: IProduct
+  items: IProduct;
 }
 
 const Modal = ({
@@ -42,11 +45,18 @@ const Modal = ({
     sizes,
     diameter,
     images,
-    ingredients
+    ingredients,
+    id,
+    img
   } = items;
 
-  const { activeSize, activeType, currentPrice, ingredientsPrice } =
-    useAppSelector((state) => state.products);
+  const {
+    activeSize,
+    activeType,
+    currentPrice,
+    ingredientsPrice,
+    ingredients: addedIngredients
+  } = useAppSelector((state) => state.products);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -62,6 +72,26 @@ const Modal = ({
   const closeModal = () => {
     setVisible(false);
     setLocked(!locked);
+  };
+
+  const addProductToCart = () => {
+    const item: ICartItem = {
+      id: nanoid(),
+      title,
+      price: currentPrice,
+      imageUrl: img,
+      type: types[activeType],
+      size: sizes[activeSize],
+      diameter: diameter[activeSize],
+      quantity: 1,
+      addedIngredients
+    };
+
+    dispatch(addToCart(item));
+
+    setTimeout(() => {
+      closeModal();
+    }, 500);
   };
 
   return (
@@ -143,7 +173,9 @@ const Modal = ({
               </div>
             </div>
 
-            <button className="modal-product__button">
+            <button
+              className="modal-product__button"
+              onClick={addProductToCart}>
               Добавить в корзину за {currentPrice} ₽
             </button>
           </div>

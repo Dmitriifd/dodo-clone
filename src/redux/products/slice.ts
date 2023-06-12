@@ -1,17 +1,20 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { Ingredient } from 'types/product';
 
 interface ProductsState {
   activeSize: number;
   activeType: number;
   currentPrice: number;
   ingredientsPrice: number;
+  ingredients: Ingredient[];
 }
 
 const initialState: ProductsState = {
   activeSize: 1,
   activeType: 0,
   currentPrice: 0,
-  ingredientsPrice: 0
+  ingredientsPrice: 0,
+  ingredients: []
 };
 
 const productsSlice = createSlice({
@@ -35,12 +38,21 @@ const productsSlice = createSlice({
       state.activeType = 0;
       state.ingredientsPrice = 0;
       state.currentPrice = 0;
+      state.ingredients = [];
     },
-    addIngredient(state, action: PayloadAction<number>) {
-      state.ingredientsPrice += action.payload;
+    addIngredient(
+      state,
+      action: PayloadAction<{ title: string; price: number; id: number}>
+    ) {
+      state.ingredientsPrice += action.payload.price;
+      state.ingredients.push(action.payload);
     },
-    removeIngredient(state, action: PayloadAction<number>) {
-      state.ingredientsPrice -= action.payload;
+    removeIngredient(
+      state,
+      action: PayloadAction<{ id: number; price: number }>
+    ) {
+      state.ingredientsPrice -= action.payload.price;
+      state.ingredients = state.ingredients.filter((item) => item.id !== action.payload.id);
     }
   }
 });

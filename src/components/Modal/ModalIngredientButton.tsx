@@ -3,34 +3,26 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import { addIngredient, removeIngredient } from 'redux/products/slice';
 import { useAppDispatch } from 'redux/store';
+import { Ingredient } from 'types/product';
 
-interface ModalIngredientButtonProps {
-  title: string;
-  price: number;
-  img: string;
-}
 
-const ModalIngredientButton = ({
-  img,
-  title,
-  price
-}: ModalIngredientButtonProps) => {
+const ModalIngredientButton = ({ img, title, price, id }: Ingredient) => {
   const [selected, setSelected] = useState(false);
 
   const dispatch = useAppDispatch();
 
-  function selectIngredient(price: number) {
+  function selectIngredient() {
     setSelected(!selected);
     if (!selected) {
-      dispatch(addIngredient(price));
+      dispatch(addIngredient({ price, title, id }));
     } else {
-      dispatch(removeIngredient(price));
+      dispatch(removeIngredient({ price, id }));
     }
   }
 
   return (
     <button
-      onClick={() => selectIngredient(price)}
+      onClick={() => selectIngredient()}
       className={clsx('product-ingredients__btn ingredients-card', {
         active: selected
       })}>

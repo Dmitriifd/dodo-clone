@@ -21,5 +21,5 @@ export interface Ingredient {
   id: number
   title: string
   price: number
-  img: string
+  img?: string
 }
