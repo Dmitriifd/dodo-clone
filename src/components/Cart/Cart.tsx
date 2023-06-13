@@ -7,16 +7,16 @@ import { CartItem } from './CartItem';
 import { CartFooter } from './CartFooter';
 import { CartSlider } from './CartSlider';
 import { useAppDispatch, useAppSelector } from 'redux/store';
-import { closeCart } from 'redux/cart/slice';
+import { closeCart, selectTotalCost, selectTotalItems } from 'redux/cart/slice';
 import { declOfNum } from 'utils/declOfNum';
 import './Cart.scss';
 
 const Cart = () => {
-  const { isOpenCart, orderList, totalCount, totalPrice } = useAppSelector(
-    (state) => state.cart
-  );
+  const { isOpenCart, orderList } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
-
+  const totalPrice = useAppSelector(selectTotalCost);
+  const totalCount = useAppSelector(selectTotalItems);
+  
   useEffect(() => {
     if (isOpenCart) {
       document.documentElement.classList.add('no-scroll');

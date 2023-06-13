@@ -3,7 +3,7 @@ import { ReactComponent as ArrowButton } from 'assets/img/arrow-button.svg';
 import { ReactComponent as Logo } from 'assets/img/pizza.svg';
 import clsx from 'clsx';
 import { useAppDispatch, useAppSelector } from 'redux/store';
-import { openCart } from 'redux/cart/slice';
+import { openCart, selectTotalItems } from 'redux/cart/slice';
 import './NavMenu.scss';
 
 interface NavMenuProps {
@@ -12,13 +12,8 @@ interface NavMenuProps {
 
 const NavMenu = ({ inView }: NavMenuProps) => {
   const dispatch = useAppDispatch();
-  const { orderList } = useAppSelector((state) => state.cart);
 
-  const totalCount = () => {
-    return orderList.reduce((acc, item) => {
-      return acc + item.quantity;
-    }, 0);
-  };
+   const totalItems = useAppSelector(selectTotalItems);
 
   return (
     <nav className={clsx('header__menu', { fixed: !inView })}>
@@ -107,10 +102,10 @@ const NavMenu = ({ inView }: NavMenuProps) => {
           className="header__basket-btn btn"
           onClick={() => dispatch(openCart())}>
           Корзина
-          {!!totalCount() && (
+          {!!totalItems && (
             <>
               <div className="divider"></div>
-              <div className="quantity">{totalCount()}</div>
+              <div className="quantity">{totalItems}</div>
               <ArrowButton className="btn-arrow" />
             </>
           )}

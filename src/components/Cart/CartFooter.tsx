@@ -1,8 +1,10 @@
+import { selectTotalCost, selectTotalItems } from 'redux/cart/slice';
 import { useAppSelector } from 'redux/store';
 import { declOfNum } from 'utils/declOfNum';
 
 const CartFooter = () => {
-  const { totalCount, totalPrice } = useAppSelector((state) => state.cart);
+  const totalPrice = useAppSelector(selectTotalCost);
+  const totalCount = useAppSelector(selectTotalItems);
 
   return (
     <div className="cart-footer">
