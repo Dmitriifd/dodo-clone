@@ -1,12 +1,12 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import { ICartItem } from 'types/cartItem';
+import { ICartItem, ISauceItem } from 'types/cartItem';
 
 interface CartState {
   isOpenCart: boolean;
   totalPrice: number;
   totalCount: number;
-  orderList: ICartItem[];
+  orderList: ICartItem[] & ISauceItem[];
 }
 
 const initialState: CartState = {
@@ -73,7 +73,9 @@ const cartSlice = createSlice({
       }
     },
     decreaseQuantity(state, action: PayloadAction<string>) {
-      const findProduct = state.orderList.find((i) => i.id === action.payload);
+      const findProduct = state.orderList.find(
+        (item) => item.id === action.payload
+      );
       if (findProduct) {
         if (findProduct.quantity > 1) {
           findProduct.quantity--;
@@ -82,6 +84,16 @@ const cartSlice = createSlice({
             (item) => item.id !== action.payload
           );
         }
+      }
+    },
+    addSauce(state, action: PayloadAction<ISauceItem>) {
+      const findProduct = state.orderList.find((item) => {
+        return item.id === action.payload.id;
+      });
+      if (findProduct) {
+        findProduct.quantity++;
+      } else {
+        state.orderList.push(action.payload);
       }
     }
   }
@@ -102,7 +114,8 @@ export const {
   addToCart,
   removeFromCart,
   increaseQuantity,
-  decreaseQuantity
+  decreaseQuantity,
+  addSauce
 } = cartSlice.actions;
 
 export const cartReducer = cartSlice.reducer;

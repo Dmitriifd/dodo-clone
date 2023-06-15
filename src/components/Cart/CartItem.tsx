@@ -14,11 +14,9 @@ const CartItem = ({
   quantity,
   addedIngredients
 }: ICartItem) => {
-  const dispatch = useAppDispatch()
-  const {orderList} = useAppSelector((state) => state.cart)
-
-  const findProduct = orderList.find((item) => item.id === id)
-
+  const dispatch = useAppDispatch();
+  const { orderList } = useAppSelector((state) => state.cart);
+  const findProduct = orderList.find((item) => item.id === id);
 
   return (
     <div className="cart-item">
@@ -35,10 +33,12 @@ const CartItem = ({
         <img className="cart-item__img" src={imageUrl} alt={title} />
         <div className="cart-item__info">
           <h3 className="cart-item__title">{title}</h3>
-          <p className="cart-item__desc">{`${size} ${diameter} см, ${type}`}</p>
-          {addedIngredients.length > 0 && (
+          {size && (
+            <p className="cart-item__desc">{`${size} ${diameter} см, ${type}`}</p>
+          )}
+          {addedIngredients?.length > 0 && (
             <p className="cart-item__ingredient">
-              + {addedIngredients.map((item) => item.title).join(', ')}
+              + {addedIngredients?.map((item) => item.title).join(', ')}
             </p>
           )}
         </div>

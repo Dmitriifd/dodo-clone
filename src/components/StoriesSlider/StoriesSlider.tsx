@@ -17,28 +17,28 @@ const sliderData = [
   { src: 'assets/stories/8.jpg', id: 8, alt: 'stories 8' }
 ];
 
+const breakpoints = {
+  320: {
+    slidesPerView: 3
+  },
+  480: {
+    slidesPerView: 3.5
+  },
+  640: {
+    slidesPerView: 4.5
+  },
+  768: {
+    slidesPerView: 5
+  },
+  1024: {
+    slidesPerView: 6
+  }
+};
+
 const StoriesSlider = () => {
   const [_, setInit] = useState<boolean>();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-
-  const breakpoints = {
-    320: {
-      slidesPerView: 3
-    },
-    480: {
-      slidesPerView: 3.5
-    },
-    640: {
-      slidesPerView: 4.5
-    },
-    768: {
-      slidesPerView: 5
-    },
-    1024: {
-      slidesPerView: 6
-    }
-  };
 
   return (
     <section className="stories">

@@ -12,3 +12,10 @@ export interface ICartItem {
   addedIngredients: Ingredient[]
 }
 
+export interface ISauceItem {
+  id: string;
+  title: string;
+  price: number;
+  imageUrl: string;
+  quantity?: number;
+}

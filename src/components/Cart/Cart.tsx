@@ -16,7 +16,7 @@ const Cart = () => {
   const dispatch = useAppDispatch();
   const totalPrice = useAppSelector(selectTotalCost);
   const totalCount = useAppSelector(selectTotalItems);
-  
+
   useEffect(() => {
     if (isOpenCart) {
       document.documentElement.classList.add('no-scroll');
@@ -46,7 +46,7 @@ const Cart = () => {
             <CartHeader />
             <div className="cart__header">
               <h3 className="cart__title">
-                {declOfNum(totalCount, ['товар', 'товара', 'товаров'])} на{' '}
+                {declOfNum(totalCount, ['товар', 'товара', 'товаров'])} на
                 {totalPrice} ₽
               </h3>
             </div>

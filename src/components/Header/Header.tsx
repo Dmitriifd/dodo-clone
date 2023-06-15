@@ -8,6 +8,7 @@ import { ReactComponent as GeoIcon } from 'assets/img/geo.svg';
 import { ReactComponent as PhoneIcon } from 'assets/img/phone-icon.svg';
 import { ReactComponent as GoogleIcon } from 'assets/img/google-play-icon.svg';
 import logo from 'assets/img/pizza.svg';
+import { useLockedBody } from 'usehooks-ts';
 import './Header.scss';
 
 interface HeAderProps {
@@ -17,18 +18,12 @@ interface HeAderProps {
 
 const Header = ({ ref1, isMobile }: HeAderProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [locked, setLocked] = useLockedBody(false, 'root');
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setLocked(!locked);
   };
-
-  useEffect(() => {
-    if (isOpen) {
-      document.documentElement.classList.add('no-scroll');
-    } else {
-      document.documentElement.classList.remove('no-scroll');
-    }
-  }, [isOpen]);
 
   return (
     <header className="header">

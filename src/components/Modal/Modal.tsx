@@ -91,7 +91,7 @@ const Modal = ({
 
     setTimeout(() => {
       closeModal();
-    }, 500);
+    }, 300);
   };
 
   return (

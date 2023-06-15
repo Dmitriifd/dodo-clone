@@ -5,7 +5,7 @@ import './Counter.scss';
 const Counter = ({id}: {id: string}) => {
   const dispatch = useAppDispatch()
   const { orderList } = useAppSelector((state) => state.cart);
-  const count = orderList.find((item) => item.id === id)
+  const count = orderList.find((item) => item.id === id);
 
   return (
     <div className="counter">

@@ -11,14 +11,34 @@ import sauce1 from 'assets/img/sauce-1.jpeg';
 import sauce2 from 'assets/img/sauce-2.jpeg';
 import sauce3 from 'assets/img/sauce-3.jpeg';
 import sauce4 from 'assets/img/sauce-4.jpeg';
-import { Counter } from 'components/Counter';
+import { SauceItem } from './SauceItem';
+
+const data = [
+  { id: '11', title: 'Сырный соус', price: 45, imageUrl: sauce4, quantity: 1 },
+  { id: '22', title: 'Барбекю', price: 45, imageUrl: sauce2, quantity: 1 },
+  {
+    id: '33',
+    title: 'Чесночный соус',
+    price: 45,
+    imageUrl: sauce3,
+    quantity: 1
+  },
+  {
+    id: '44',
+    title: 'Малиновое варенье',
+    price: 45,
+    imageUrl: sauce1,
+    quantity: 1
+  }
+];
 
 const CartSlider = () => {
   const [_, setInit] = useState<boolean>();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [isAddSouce, setAddSouce] = useState(false);
+
+  const [sauces, setSauces] = useState(data);
 
   return (
     <div className="cart-slider">
@@ -98,42 +118,9 @@ const CartSlider = () => {
               fill="#000"></path>
           </svg>
         </button>
-        <div className="modal-order__item order-item">
-          <div className="order-item__img">
-            <img src={sauce1} alt="Сырный соус" />
-          </div>
-          <h3 className="order-item__title">Сырный соус</h3>
-          {!isAddSouce ? (
-            <button
-              className="order-item__btn"
-              onClick={() => setAddSouce(!isAddSouce)}>
-              45 ₽
-            </button>
-          ) : (
-            <Counter />
-          )}
-        </div>
-        <div className="modal-order__item order-item">
-          <div className="order-item__img">
-            <img src={sauce2} alt="Сырный соус" />
-          </div>
-          <h3 className="order-item__title">Барбекю</h3>
-          <button className="order-item__btn">45 ₽</button>
-        </div>
-        <div className="modal-order__item order-item">
-          <div className="order-item__img">
-            <img src={sauce3} alt="Сырный соус" />
-          </div>
-          <h3 className="order-item__title">Чесночный соус</h3>
-          <button className="order-item__btn">45 ₽</button>
-        </div>
-        <div className="modal-order__item order-item">
-          <div className="order-item__img">
-            <img src={sauce4} alt="Сырный соус" />
-          </div>
-          <h3 className="order-item__title">Малиновое варенье</h3>
-          <button className="order-item__btn">45 ₽</button>
-        </div>
+        {sauces.map((sauce) => (
+          <SauceItem key={sauce.id} {...sauce} isOpen={isOpen} />
+        ))}
       </div>
     </div>
   );
