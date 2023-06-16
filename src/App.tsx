@@ -27,7 +27,7 @@ function App() {
           borderRadius: '10px',
           background: '#333',
           color: '#fff',
-          padding: '15px',
+          padding: '15px'
         }
       }
     );
@@ -49,16 +49,10 @@ function App() {
     <>
       <Header ref1={ref} isMobile={isMobile} />
 
-      <Toaster
-        position="top-right"
-        containerStyle={{
-          top: 80,
-          right: 300
-        }}
-      />
-
       {!isMobile && <NavMenu inView={inView} />}
-
+        <Toaster
+          position="top-right"
+        />
       <main className="main">
         <StoriesSlider />
         <PopularSlider />

@@ -103,6 +103,20 @@ const Modal = ({
       })}
       onClick={closeModal}>
       <div className="modal__body" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-button-close" onClick={closeModal}>
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M27.925 11.16a1.25 1.25 0 00-1.766-.085l-10.16 9.236-10.158-9.236a1.25 1.25 0 10-1.682 1.85l10.462 9.511.017.016c.079.072.184.167.285.246.12.093.31.223.568.301.332.101.686.101 1.018 0 .258-.078.447-.208.568-.301.1-.079.205-.174.284-.246l.018-.016 10.461-9.511a1.25 1.25 0 00.085-1.766z"
+              fill="#000"></path>
+          </svg>
+        </button>
         <div className="modal__icon" onClick={closeModal}>
           <CloseIcon />
         </div>
