@@ -47,7 +47,7 @@ const Cart = () => {
             <div className="cart__header">
               <h3 className="cart__title">
                 {declOfNum(totalCount, ['товар', 'товара', 'товаров'])} на
-                {totalPrice} ₽
+                {' '}{totalPrice} ₽
               </h3>
             </div>
             <div className="cart__body">

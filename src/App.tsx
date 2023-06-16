@@ -9,11 +9,28 @@ import { StoriesSlider } from 'components/StoriesSlider';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useGetProductsQuery } from 'redux/api/productsApi';
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   const { ref, inView } = useInView({ threshold: 1, initialInView: true });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const { data = [], isLoading } = useGetProductsQuery('');
+
+  const notify = ({ title, diameter }: { title: string; diameter: number }) =>
+    toast(
+      `Добавлено:
+      ${title} ${diameter} см
+    `,
+      {
+        icon: '🍕',
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+          padding: '15px',
+        }
+      }
+    );
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,6 +49,14 @@ function App() {
     <>
       <Header ref1={ref} isMobile={isMobile} />
 
+      <Toaster
+        position="top-right"
+        containerStyle={{
+          top: 80,
+          right: 300
+        }}
+      />
+
       {!isMobile && <NavMenu inView={inView} />}
 
       <main className="main">
@@ -47,7 +72,7 @@ function App() {
             <h2 className="pizza__title title">Пицца</h2>
             <div className="pizza__wrapper grid-wrapper">
               {data.map((item) => (
-                <ProductCard key={item.id} item={item} />
+                <ProductCard key={item.id} item={item} notify={notify} />
               ))}
             </div>
           </div>

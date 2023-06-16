@@ -26,6 +26,7 @@ interface ModalProps {
   locked: Boolean;
   setLocked: (arg: boolean) => void;
   items: IProduct;
+  notify: ({ title, diameter }: { title: string; diameter: number }) => string;
 }
 
 const Modal = ({
@@ -34,7 +35,8 @@ const Modal = ({
   setVisible,
   setLocked,
   locked,
-  items
+  items,
+  notify
 }: ModalProps) => {
   const {
     title,
@@ -88,9 +90,9 @@ const Modal = ({
     };
 
     dispatch(addToCart(item));
-
     setTimeout(() => {
       closeModal();
+      notify({ title, diameter: diameter[activeSize] });
     }, 300);
   };
 
@@ -130,7 +132,7 @@ const Modal = ({
                 </button>
               </div>
               <p className="modal-product__info">
-                {diameter[activeSize]} см, {types[activeType].toLowerCase()}
+                {diameter[activeSize]} см, {types[activeType].toLowerCase()}{' '}
                 тесто, {selectWeight(activeSize, activeType, weight)} г
               </p>
               <div className="modal-product__desc">{desc}</div>

@@ -34,7 +34,7 @@ const CartItem = ({
         <div className="cart-item__info">
           <h3 className="cart-item__title">{title}</h3>
           {size && (
-            <p className="cart-item__desc">{`${size} ${diameter} см, ${type}`}</p>
+            <p className="cart-item__desc">{`${size} ${diameter} см, ${type.toLowerCase()} тесто`}</p>
           )}
           {addedIngredients?.length > 0 && (
             <p className="cart-item__ingredient">

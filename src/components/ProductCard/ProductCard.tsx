@@ -6,10 +6,11 @@ import { IProduct } from 'types/product';
 import './ProductCard.scss';
 
 interface ProductCardProps {
-  item: IProduct
+  item: IProduct;
+  notify: ({ title, diameter }: { title: string; diameter: number }) => string;
 }
 
-const ProductCard = ({item}: ProductCardProps) => {
+const ProductCard = ({ item, notify }: ProductCardProps) => {
   const { img, title, desc, price } = item;
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [locked, setLocked] = useLockedBody(false, 'root');
@@ -31,6 +32,7 @@ const ProductCard = ({item}: ProductCardProps) => {
           locked={locked}
           setLocked={setLocked}
           items={item}
+          notify={notify}
         />
       )}
       <article className="pizza__item product-card">
