@@ -86,7 +86,7 @@ const cartSlice = createSlice({
         }
       }
     },
-    addSauce(state, action: PayloadAction<ISauceItem>) {
+    addProductFromCart(state, action: PayloadAction<ISauceItem>) {
       const findProduct = state.orderList.find((item) => {
         return item.id === action.payload.id;
       });
@@ -115,7 +115,7 @@ export const {
   removeFromCart,
   increaseQuantity,
   decreaseQuantity,
-  addSauce
+  addProductFromCart
 } = cartSlice.actions;
 
 export const cartReducer = cartSlice.reducer;

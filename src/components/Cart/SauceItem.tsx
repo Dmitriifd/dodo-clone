@@ -1,5 +1,5 @@
 import { Counter } from 'components/Counter';
-import { addSauce } from 'redux/cart/slice';
+import { addProductFromCart } from 'redux/cart/slice';
 import { useAppDispatch, useAppSelector } from 'redux/store';
 
 interface SauceItemProps {
@@ -12,12 +12,11 @@ interface SauceItemProps {
 }
 
 const SauceItem = ({ imageUrl, title, price, id }: SauceItemProps) => {
-  const { orderList } = useAppSelector((state) => state.cart);
+  const orderList = useAppSelector((state) => state.cart.orderList);
   const count = orderList.find((item) => item.id === id);
 
   const dispatch = useAppDispatch();
-
-  const increase = (id: string) => {
+  const handleAddSauce = (id: string) => {
     const sauce = {
       imageUrl,
       title,
@@ -26,7 +25,7 @@ const SauceItem = ({ imageUrl, title, price, id }: SauceItemProps) => {
       quantity: 1
     };
 
-    dispatch(addSauce(sauce));
+    dispatch(addProductFromCart(sauce));
   };
 
   return (
@@ -36,7 +35,7 @@ const SauceItem = ({ imageUrl, title, price, id }: SauceItemProps) => {
       </div>
       <h3 className="order-item__title">{title}</h3>
       {!count?.quantity ? (
-        <button className="order-item__btn" onClick={() => increase(id)}>
+        <button className="order-item__btn" onClick={() => handleAddSauce(id)}>
           {price} ₽
         </button>
       ) : (
