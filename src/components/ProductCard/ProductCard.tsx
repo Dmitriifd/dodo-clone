@@ -42,7 +42,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
             <button
               className="product-card__button"
               onClick={handleProductClick}>
-              {isMobile ? `от ${price[0]} ₽` : 'Выбрать'}
+              {isMobile ? `от ${price[0] || price} ₽` : 'Выбрать'}
             </button>
           </div>
         </div>
