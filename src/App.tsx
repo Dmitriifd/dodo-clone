@@ -8,10 +8,8 @@ import { StoriesSlider } from 'components/StoriesSlider';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Toaster } from 'react-hot-toast';
-import { SectionDrinks } from 'components/Sections/SectionDrinks';
-import { SectionDeserts } from 'components/Sections/SectionDeserts';
-import { SectionSnacks } from 'components/Sections/SectionSnacks';
-import { SectionCombo } from 'components/Sections/SectionCombo';
+import { SectionCombo, SectionDeserts, SectionDrinks, SectionPizza, SectionSnacks } from 'components/Sections';
+
 
 function App() {
   const { ref, inView } = useInView({ threshold: 1, initialInView: true });
@@ -35,7 +33,7 @@ function App() {
       <Header ref1={ref} isMobile={isMobile} />
       {!isMobile && <NavMenu inView={inView} />}
       <Toaster position="top-right" />
-      
+
       <main className="main">
         <StoriesSlider />
         <PopularSlider />
@@ -44,6 +42,7 @@ function App() {
           {isMobile && <NavMenu inView={inView} />}
         </div>
 
+        <SectionPizza />
         <SectionCombo />
         <SectionSnacks />
         <SectionDeserts />
