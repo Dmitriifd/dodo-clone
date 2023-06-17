@@ -7,7 +7,7 @@ const CartItem = ({
   id,
   title,
   price,
-  imageUrl,
+  img,
   type,
   size,
   diameter,
@@ -30,7 +30,7 @@ const CartItem = ({
         </svg>
       </button>
       <div className="cart-item__content">
-        <img className="cart-item__img" src={imageUrl} alt={title} />
+        <img className="cart-item__img" src={img} alt={title} />
         <div className="cart-item__info">
           <h3 className="cart-item__title">{title}</h3>
           {size && (

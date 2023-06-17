@@ -4,7 +4,7 @@ export interface ICartItem {
   id: string;
   title: string;
   price: number;
-  imageUrl: string;
+  img: string;
   type: string;
   size: string;
   diameter: number;
@@ -16,6 +16,6 @@ export interface ISauceItem {
   id: string;
   title: string;
   price: number;
-  imageUrl: string;
+  img: string;
   quantity?: number;
 }

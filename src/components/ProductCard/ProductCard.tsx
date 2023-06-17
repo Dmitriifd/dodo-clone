@@ -7,10 +7,9 @@ import './ProductCard.scss';
 
 interface ProductCardProps {
   item: IProduct;
-  notify: ({ title, diameter }: { title: string; diameter: number }) => string;
 }
 
-const ProductCard = ({ item, notify }: ProductCardProps) => {
+const ProductCard = ({ item }: ProductCardProps) => {
   const { img, title, desc, price } = item;
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [locked, setLocked] = useLockedBody(false, 'root');
@@ -32,7 +31,6 @@ const ProductCard = ({ item, notify }: ProductCardProps) => {
           locked={locked}
           setLocked={setLocked}
           items={item}
-          notify={notify}
         />
       )}
       <article className="pizza__item product-card">
@@ -47,7 +45,7 @@ const ProductCard = ({ item, notify }: ProductCardProps) => {
           </h3>
           <p className="product-card__description">{desc}</p>
           <div className="product-card__footer">
-            <p className="product-card__price">от {price[0]} ₽</p>
+            <p className="product-card__price">от {price[0] || price} ₽</p>
             <button className="product-card__button" onClick={openModal}>
               {isMobile ? `от ${price[0]} ₽` : 'Выбрать'}
             </button>

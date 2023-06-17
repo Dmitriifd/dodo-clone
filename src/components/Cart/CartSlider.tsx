@@ -17,20 +17,20 @@ import { useAppDispatch, useAppSelector } from 'redux/store';
 import { ISauceItem } from 'types/cartItem';
 
 const data = [
-  { id: '11', title: 'Сырный соус', price: 45, imageUrl: sauce4, quantity: 1 },
-  { id: '22', title: 'Барбекю', price: 45, imageUrl: sauce2, quantity: 1 },
+  { id: '11', title: 'Сырный соус', price: 45, img: sauce4, quantity: 1 },
+  { id: '22', title: 'Барбекю', price: 45, img: sauce2, quantity: 1 },
   {
     id: '33',
     title: 'Чесночный соус',
     price: 45,
-    imageUrl: sauce3,
+    img: sauce3,
     quantity: 1
   },
   {
     id: '44',
     title: 'Малиновое варенье',
     price: 45,
-    imageUrl: sauce1,
+    img: sauce1,
     quantity: 1
   }
 ];
@@ -40,21 +40,21 @@ const sliderItems = [
     id: '111',
     title: 'Додстер',
     price: 169,
-    imageUrl: dodster,
+    img: dodster,
     quantity: 1
   },
   {
     id: '222',
     title: 'Rich Tea Черный с лимоном',
     price: 119,
-    imageUrl: drink2,
+    img: drink2,
     quantity: 1
   },
   {
     id: '333',
     title: 'Rich Tea Зеленый с манго',
     price: 119,
-    imageUrl: drink,
+    img: drink,
     quantity: 1
   }
 ];
@@ -105,15 +105,15 @@ const CartSlider = () => {
             <h3 className="sauce-title">Соусы</h3>
           </button>
         </SwiperSlide>
-        {filteredProducts.map(({ id, title, price, imageUrl, quantity }) => {
+        {filteredProducts.map(({ id, title, price, img, quantity }) => {
           return (
             <SwiperSlide
               key={id}
               onClick={() =>
-                handleAddProduct({ id, title, price, imageUrl, quantity })
+                handleAddProduct({ id, title, price, img, quantity })
               }>
               <div className="cart-add-order">
-                <img src={imageUrl} alt={title} />
+                <img src={img} alt={title} />
                 <div>
                   <h3>{title}</h3>
                   <p>{price} ₽</p>

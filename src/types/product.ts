@@ -1,25 +1,26 @@
 export interface IProduct {
-  id: string
-  title: string
-  desc: string
-  img: string
-  types: string[]
-  weight: number[]
-  price: number[]
-  sizes: string[]
-  diameter: number[]
-  images: Images
-  ingredients: Ingredient[]
+  id: string;
+  title: string;
+  desc: string;
+  img: string;
+  types: string[];
+  weight: number[];
+  price: number[];
+  sizes: string[];
+  diameter: number[];
+  images: Images;
+  ingredients: Ingredient[];
+  type: string;
 }
 
 export interface Images {
-  trad: string
-  thin: string
+  trad: string;
+  thin: string;
 }
 
 export interface Ingredient {
-  id: number
-  title: string
-  price: number
-  img?: string
+  id: number;
+  title: string;
+  price: number;
+  img?: string;
 }

@@ -8,29 +8,17 @@ import { StickyCart } from 'components/StickyCart';
 import { StoriesSlider } from 'components/StoriesSlider';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { useGetProductsQuery } from 'redux/api/productsApi';
-import toast, { Toaster } from 'react-hot-toast';
+import { useGetComboQuery, useGetDesertsQuery, useGetDrinksQuery, useGetProductsQuery, useGetSnacksQuery } from 'redux/api/productsApi';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const { ref, inView } = useInView({ threshold: 1, initialInView: true });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const { data = [], isLoading } = useGetProductsQuery('');
-
-  const notify = ({ title, diameter }: { title: string; diameter: number }) =>
-    toast(
-      `Добавлено:
-      ${title} ${diameter} см
-    `,
-      {
-        icon: '🍕',
-        style: {
-          borderRadius: '10px',
-          background: '#333',
-          color: '#fff',
-          padding: '15px'
-        }
-      }
-    );
+  const { data: pizza = [], isLoading } = useGetProductsQuery('');
+  const { data: combo = [] } = useGetComboQuery('');
+  const { data: snacks = [] } = useGetSnacksQuery('');
+  const { data: deserts = [] } = useGetDesertsQuery('');
+  const { data: drinks = [] } = useGetDrinksQuery('');
 
   useEffect(() => {
     const handleResize = () => {
@@ -50,9 +38,7 @@ function App() {
       <Header ref1={ref} isMobile={isMobile} />
 
       {!isMobile && <NavMenu inView={inView} />}
-        <Toaster
-          position="top-right"
-        />
+      <Toaster position="top-right" />
       <main className="main">
         <StoriesSlider />
         <PopularSlider />
@@ -65,18 +51,18 @@ function App() {
           <div className="pizza__container">
             <h2 className="pizza__title title">Пицца</h2>
             <div className="pizza__wrapper grid-wrapper">
-              {data.map((item) => (
-                <ProductCard key={item.id} item={item} notify={notify} />
+              {pizza.map((item) => (
+                <ProductCard key={item.id} item={item} />
               ))}
             </div>
           </div>
         </section>
-        {/* <section className="combo section" id="combo">
+        <section className="combo section" id="combo">
           <div className="combo__container">
             <h2 className="combo__title title">Комбо</h2>
             <div className="combo__wrapper grid-wrapper">
-              {tempData.map((item) => (
-                <ProductCard key={item.id} {...item} />
+              {combo.map((item: any) => (
+                <ProductCard key={item.id} item={item} />
               ))}
             </div>
           </div>
@@ -85,8 +71,8 @@ function App() {
           <div className="snacks__container">
             <h2 className="snacks__title title">Закуски</h2>
             <div className="snacks__wrapper grid-wrapper">
-              {tempData.map((item) => (
-                <ProductCard key={item.id} {...item} />
+              {snacks.map((item: any) => (
+                <ProductCard key={item.id} item={item} />
               ))}
             </div>
           </div>
@@ -95,8 +81,8 @@ function App() {
           <div className="desserts__container">
             <h2 className="desserts__title title">Десерты</h2>
             <div className="desserts__wrapper grid-wrapper">
-              {tempData.map((item) => (
-                <ProductCard key={item.id} {...item} />
+              {deserts.map((item: any) => (
+                <ProductCard key={item.id} item={item} />
               ))}
             </div>
           </div>
@@ -105,12 +91,12 @@ function App() {
           <div className="drinks__container">
             <h2 className="drinks__title title">Напитки</h2>
             <div className="drinks__wrapper grid-wrapper">
-              {tempData.map((item) => (
-                <ProductCard key={item.id} {...item} />
+              {drinks.map((item: any) => (
+                <ProductCard key={item.id} item={item} />
               ))}
             </div>
           </div>
-        </section> */}
+        </section>
       </main>
       <StickyCart />
       <Footer />

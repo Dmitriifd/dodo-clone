@@ -6,19 +6,19 @@ interface SauceItemProps {
   id: string;
   title: string;
   price: number;
-  imageUrl: string;
+  img: string;
   quantity?: number;
   isOpen: boolean;
 }
 
-const SauceItem = ({ imageUrl, title, price, id }: SauceItemProps) => {
+const SauceItem = ({ img, title, price, id }: SauceItemProps) => {
   const orderList = useAppSelector((state) => state.cart.orderList);
   const count = orderList.find((item) => item.id === id);
 
   const dispatch = useAppDispatch();
   const handleAddSauce = (id: string) => {
     const sauce = {
-      imageUrl,
+      img,
       title,
       price,
       id,
@@ -31,7 +31,7 @@ const SauceItem = ({ imageUrl, title, price, id }: SauceItemProps) => {
   return (
     <div className="modal-order__item order-item">
       <div className="order-item__img">
-        <img src={imageUrl} alt="Сырный соус" />
+        <img src={img} alt="Сырный соус" />
       </div>
       <h3 className="order-item__title">{title}</h3>
       {!count?.quantity ? (

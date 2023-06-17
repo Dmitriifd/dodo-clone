@@ -31,7 +31,7 @@ const cartSlice = createSlice({
         id,
         title,
         price,
-        imageUrl,
+        img,
         type,
         size,
         diameter,
@@ -41,7 +41,7 @@ const cartSlice = createSlice({
 
       const findProduct = state.orderList.find((product: ICartItem) => {
         const arr1 = product.addedIngredients?.map((obj) => obj.title);
-        const arr2 = addedIngredients.map((obj) => obj.title);
+        const arr2 = addedIngredients?.map((obj) => obj.title);
         const result = JSON.stringify(arr1) === JSON.stringify(arr2);
 
         return (

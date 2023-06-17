@@ -18,6 +18,7 @@ import { IProduct } from 'types/product';
 import { addToCart } from 'redux/cart/slice';
 import { ICartItem } from 'types/cartItem';
 import { nanoid } from '@reduxjs/toolkit';
+import { toast } from 'react-hot-toast';
 
 interface ModalProps {
   children?: ReactNode;
@@ -26,8 +27,24 @@ interface ModalProps {
   locked: Boolean;
   setLocked: (arg: boolean) => void;
   items: IProduct;
-  notify: ({ title, diameter }: { title: string; diameter: number }) => string;
 }
+
+  const notify = ({ title, desc }: { title: string; desc?: any }) =>
+    toast(
+      desc ?
+      `Добавлено:
+      ${title} ${desc ?? desc} см
+    ` : `Добавлено: ${title}`,
+      {
+        icon: '🍕',
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+          padding: '15px'
+        }
+      }
+    );
 
 const Modal = ({
   children,
@@ -36,7 +53,6 @@ const Modal = ({
   setLocked,
   locked,
   items,
-  notify
 }: ModalProps) => {
   const {
     title,
@@ -49,7 +65,8 @@ const Modal = ({
     images,
     ingredients,
     id,
-    img
+    img,
+    type
   } = items;
 
   const {
@@ -76,12 +93,12 @@ const Modal = ({
     setLocked(!locked);
   };
 
-  const addProductToCart = () => {
+  const addPizzaToCart = () => {
     const item: ICartItem = {
       id: nanoid(),
       title,
       price: currentPrice,
-      imageUrl: img,
+      img,
       type: types[activeType],
       size: sizes[activeSize],
       diameter: diameter[activeSize],
@@ -92,7 +109,23 @@ const Modal = ({
     dispatch(addToCart(item));
     setTimeout(() => {
       closeModal();
-      notify({ title, diameter: diameter[activeSize] });
+      notify({ title, desc: diameter[activeSize] });
+    }, 300);
+  };
+
+  const addProductToCart = () => {
+    const item: any = {
+      id,
+      title,
+      price,
+      img,
+      quantity: 1
+    };
+
+    dispatch(addToCart(item));
+    setTimeout(() => {
+      closeModal();
+      notify({ title });
     }, 300);
   };
 
@@ -121,81 +154,114 @@ const Modal = ({
           <CloseIcon />
         </div>
         {children}
-        <div className="modal__wrap">
-          <div className="modal__left">
-            <div
-              className={clsx(['modal__img', `modal__img-size${activeSize}`])}>
-              <img
-                src={activeType === 0 ? images.trad : images.thin}
-                alt={title}
-              />
-            </div>
-            <div className="modal__radius-m">
-              <RadiusM />
-            </div>
-            <div className="modal__radius-l">
-              <RadiusL />
-            </div>
-          </div>
-          <div className="modal__right modal-product">
-            <div className="modal-product__inner">
-              <div className="modal-product__head">
-                <h2 className="modal-product__title">{title}</h2>
-                <button>
-                  <InfoIcon />
-                </button>
-              </div>
-              <p className="modal-product__info">
-                {diameter[activeSize]} см, {types[activeType].toLowerCase()}{' '}
-                тесто, {selectWeight(activeSize, activeType, weight)} г
-              </p>
-              <div className="modal-product__desc">{desc}</div>
+        {type === 'pizza' ? (
+          <div className="modal__wrap">
+            <div className="modal__left">
               <div
-                className={`modal-product__sizes modal-product__type modal-product__size-${activeSize}`}>
-                {sizes.map((size: string, i: number) => (
-                  <button
-                    key={i}
-                    className="modal-product__btn"
-                    data-type="small"
-                    onClick={() => dispatch(selectSize(i))}>
-                    {size}
-                  </button>
-                ))}
+                className={clsx([
+                  'modal__img',
+                  `modal__img-size${activeSize}`
+                ])}>
+                <img
+                  src={activeType === 0 ? images.trad : images.thin}
+                  alt={title}
+                />
               </div>
-              <div
-                className={`modal-product__sizes modal-product__type modal-product__type-${activeType}`}>
-                {types.map((type: string, i: number) => (
-                  <button
-                    key={i}
-                    disabled={activeSize === 0}
-                    className="modal-product__btn"
-                    data-type="trad"
-                    onClick={() => dispatch(selectType(i))}>
-                    {type}
-                  </button>
-                ))}
+              <div className="modal__radius-m">
+                <RadiusM />
               </div>
-              <div className="modal-product__wrap product-ingredients">
-                <h2 className="product-ingredients__title">
-                  Добавить по вкусу
-                </h2>
-                <ul className="product-ingredients__list">
-                  {ingredients.map((item) => (
-                    <li key={item.id} className="product-ingredients__item">
-                      <ModalIngredientButton {...item} />
-                    </li>
+              <div className="modal__radius-l">
+                <RadiusL />
+              </div>
+            </div>
+            <div className="modal__right modal-product">
+              <div className="modal-product__inner">
+                <div className="modal-product__head">
+                  <h2 className="modal-product__title">{title}</h2>
+                  <button>
+                    <InfoIcon />
+                  </button>
+                </div>
+                <p className="modal-product__info">
+                  {diameter[activeSize]} см, {types[activeType].toLowerCase()}{' '}
+                  тесто, {selectWeight(activeSize, activeType, weight)} г
+                </p>
+                <div className="modal-product__desc">{desc}</div>
+                <div
+                  className={`modal-product__sizes modal-product__type modal-product__size-${activeSize}`}>
+                  {sizes.map((size: string, i: number) => (
+                    <button
+                      key={i}
+                      className="modal-product__btn"
+                      data-type="small"
+                      onClick={() => dispatch(selectSize(i))}>
+                      {size}
+                    </button>
                   ))}
-                </ul>
+                </div>
+                <div
+                  className={`modal-product__sizes modal-product__type modal-product__type-${activeType}`}>
+                  {types.map((type: string, i: number) => (
+                    <button
+                      key={i}
+                      disabled={activeSize === 0}
+                      className="modal-product__btn"
+                      data-type="trad"
+                      onClick={() => dispatch(selectType(i))}>
+                      {type}
+                    </button>
+                  ))}
+                </div>
+                <div className="modal-product__wrap product-ingredients">
+                  <h2 className="product-ingredients__title">
+                    Добавить по вкусу
+                  </h2>
+                  <ul className="product-ingredients__list">
+                    {ingredients.map((item) => (
+                      <li key={item.id} className="product-ingredients__item">
+                        <ModalIngredientButton {...item} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <button
+                className="modal-product__button"
+                onClick={addPizzaToCart}>
+                Добавить в корзину за {currentPrice} ₽
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="modal__wrap">
+            <div className="modal__left">
+              <div className="modal__img">
+                <img src={img} alt={title} />
               </div>
             </div>
+            <div className="modal__right modal-product">
+              <div className="modal-product__inner">
+                <div className="modal-product__head">
+                  <h2 className="modal-product__title">{title}</h2>
+                  <button>
+                    <InfoIcon />
+                  </button>
+                </div>
+                <p className="modal-product__info">
+                  {weight}
+                </p>
+                <div className="modal-product__desc">{desc}</div>
+              </div>
 
-            <button
-              className="modal-product__button"
-              onClick={addProductToCart}>
-              Добавить в корзину за {currentPrice} ₽
-            </button>
+              <button
+                className="modal-product__button"
+                onClick={addProductToCart}>
+                Добавить в корзину за {price} ₽
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
