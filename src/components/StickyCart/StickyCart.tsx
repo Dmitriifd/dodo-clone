@@ -1,7 +1,7 @@
 import { ReactComponent as CartIcon } from 'assets/img/cart-icon.svg';
 import './StickyCart.scss';
 import { useAppDispatch, useAppSelector } from 'redux/store';
-import { openCart, selectTotalItems } from 'redux/cart/slice';
+import { openCart, selectTotalItems } from 'redux/cart/cartSlice';
 
 const StickyCart = () => {
   const dispatch = useAppDispatch();

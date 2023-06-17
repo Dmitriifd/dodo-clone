@@ -33,7 +33,7 @@ const productsSlice = createSlice({
     setCurrentPrice(state, action: PayloadAction<number>) {
       state.currentPrice = state.ingredientsPrice + action.payload;
     },
-    resetCurrentPrice(state) {
+    resetProduct(state) {
       state.activeSize = 1;
       state.activeType = 0;
       state.ingredientsPrice = 0;
@@ -42,7 +42,7 @@ const productsSlice = createSlice({
     },
     addIngredient(
       state,
-      action: PayloadAction<{ title: string; price: number; id: number}>
+      action: PayloadAction<{ title: string; price: number; id: number }>
     ) {
       state.ingredientsPrice += action.payload.price;
       state.ingredients.push(action.payload);
@@ -52,7 +52,9 @@ const productsSlice = createSlice({
       action: PayloadAction<{ id: number; price: number }>
     ) {
       state.ingredientsPrice -= action.payload.price;
-      state.ingredients = state.ingredients.filter((item) => item.id !== action.payload.id);
+      state.ingredients = state.ingredients.filter(
+        (item) => item.id !== action.payload.id
+      );
     }
   }
 });
@@ -60,7 +62,7 @@ const productsSlice = createSlice({
 export const {
   selectSize,
   selectType,
-  resetCurrentPrice,
+  resetProduct,
   addIngredient,
   removeIngredient,
   setCurrentPrice

@@ -7,7 +7,7 @@ import { CartItem } from './CartItem';
 import { CartFooter } from './CartFooter';
 import { CartSlider } from './CartSlider';
 import { useAppDispatch, useAppSelector } from 'redux/store';
-import { closeCart, selectTotalCost, selectTotalItems } from 'redux/cart/slice';
+import { closeCart, selectTotalCost, selectTotalItems } from 'redux/cart/cartSlice';
 import { declOfNum } from 'utils/declOfNum';
 import './Cart.scss';
 

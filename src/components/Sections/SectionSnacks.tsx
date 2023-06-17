@@ -3,7 +3,7 @@ import { useGetSnacksQuery } from 'redux/api/productsApi';
 
 const SectionSnacks = () => {
   const { data: snacks = [] } = useGetSnacksQuery('');
-  
+
   return (
     <section className="snacks section" id="snacks">
       <div className="snacks__container">

@@ -3,7 +3,7 @@ import { ReactComponent as ArrowButton } from 'assets/img/arrow-button.svg';
 import { ReactComponent as Logo } from 'assets/img/pizza.svg';
 import clsx from 'clsx';
 import { useAppDispatch, useAppSelector } from 'redux/store';
-import { openCart, selectTotalItems } from 'redux/cart/slice';
+import { openCart, selectTotalItems } from 'redux/cart/cartSlice';
 import './NavMenu.scss';
 
 interface NavMenuProps {

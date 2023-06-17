@@ -1,4 +1,4 @@
-import { selectTotalCost, selectTotalItems } from 'redux/cart/slice';
+import { selectTotalCost, selectTotalItems } from 'redux/cart/cartSlice';
 import { useAppSelector } from 'redux/store';
 import { declOfNum } from 'utils/declOfNum';
 

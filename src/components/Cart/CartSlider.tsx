@@ -12,7 +12,7 @@ import sauce2 from 'assets/img/sauce-2.jpeg';
 import sauce3 from 'assets/img/sauce-3.jpeg';
 import sauce4 from 'assets/img/sauce-4.jpeg';
 import { SauceItem } from './SauceItem';
-import { addProductFromCart } from 'redux/cart/slice';
+import { addProductFromCart } from 'redux/cart/cartSlice';
 import { useAppDispatch, useAppSelector } from 'redux/store';
 import { ISauceItem } from 'types/cartItem';
 

@@ -1,5 +1,5 @@
 import { Counter } from 'components/Counter';
-import { addProductFromCart } from 'redux/cart/slice';
+import { addProductFromCart } from 'redux/cart/cartSlice';
 import { useAppDispatch, useAppSelector } from 'redux/store';
 
 interface SauceItemProps {

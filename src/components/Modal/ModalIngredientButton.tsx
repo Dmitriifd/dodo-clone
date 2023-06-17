@@ -1,7 +1,7 @@
 import { ReactComponent as CheckIcon } from 'assets/img/button-selected.svg';
 import clsx from 'clsx';
 import { useState } from 'react';
-import { addIngredient, removeIngredient } from 'redux/products/slice';
+import { addIngredient, removeIngredient } from 'redux/product/productSlice';
 import { useAppDispatch } from 'redux/store';
 import { Ingredient } from 'types/product';
 

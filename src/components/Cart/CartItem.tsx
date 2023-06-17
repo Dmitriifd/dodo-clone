@@ -1,5 +1,5 @@
 import { Counter } from 'components/Counter';
-import { removeFromCart } from 'redux/cart/slice';
+import { removeFromCart } from 'redux/cart/cartSlice';
 import { useAppDispatch, useAppSelector } from 'redux/store';
 import { ICartItem } from 'types/cartItem';
 

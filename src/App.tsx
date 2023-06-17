@@ -5,15 +5,23 @@ import { NavMenu } from 'components/NavMenu';
 import { PopularSlider } from 'components/PopularSlider';
 import { StickyCart } from 'components/StickyCart';
 import { StoriesSlider } from 'components/StoriesSlider';
-import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Toaster } from 'react-hot-toast';
-import { SectionCombo, SectionDeserts, SectionDrinks, SectionPizza, SectionSnacks } from 'components/Sections';
-
+import { Modal } from 'components/Modal';
+import { useState, useEffect } from 'react';
+import {
+  SectionCombo,
+  SectionDeserts,
+  SectionDrinks,
+  SectionPizza,
+  SectionSnacks
+} from 'components/Sections';
+import { useAppSelector } from 'redux/store';
 
 function App() {
   const { ref, inView } = useInView({ threshold: 1, initialInView: true });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const selectedProduct = useAppSelector((state) => state.modal.selectedProduct);
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,9 +53,12 @@ function App() {
         <SectionPizza />
         <SectionCombo />
         <SectionSnacks />
-        <SectionDeserts />
+        <SectionDeserts  />
         <SectionDrinks />
       </main>
+      {selectedProduct && (
+        <Modal product={selectedProduct} />
+      )}
       <StickyCart />
       <Footer />
       <Cart />

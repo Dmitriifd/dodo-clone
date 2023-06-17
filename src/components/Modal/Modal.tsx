@@ -8,51 +8,28 @@ import { ModalIngredientButton } from './ModalIngredientButton';
 import { selectWeight } from 'utils/selectWeight';
 import { useAppDispatch, useAppSelector } from 'redux/store';
 import {
-  resetCurrentPrice,
+  resetProduct,
   selectSize,
   selectType,
   setCurrentPrice
-} from 'redux/products/slice';
-import './Modal.scss';
+} from 'redux/product/productSlice';
 import { IProduct } from 'types/product';
-import { addToCart } from 'redux/cart/slice';
+import { addToCart } from 'redux/cart/cartSlice';
 import { ICartItem } from 'types/cartItem';
 import { nanoid } from '@reduxjs/toolkit';
-import { toast } from 'react-hot-toast';
+import { useLockedBody } from 'usehooks-ts';
+import { closeProductModal } from 'redux/productModal/productModalSlice';
+import { notify } from 'utils/notify';
+import './Modal.scss';
 
 interface ModalProps {
   children?: ReactNode;
-  visible?: boolean;
-  setVisible: (arg: boolean) => void;
-  locked: Boolean;
-  setLocked: (arg: boolean) => void;
-  items: IProduct;
+  product: IProduct;
 }
-
-  const notify = ({ title, desc }: { title: string; desc?: any }) =>
-    toast(
-      desc ?
-      `Добавлено:
-      ${title} ${desc ?? desc} см
-    ` : `Добавлено: ${title}`,
-      {
-        icon: '🍕',
-        style: {
-          borderRadius: '10px',
-          background: '#333',
-          color: '#fff',
-          padding: '15px'
-        }
-      }
-    );
 
 const Modal = ({
   children,
-  visible,
-  setVisible,
-  setLocked,
-  locked,
-  items,
+  product
 }: ModalProps) => {
   const {
     title,
@@ -67,7 +44,7 @@ const Modal = ({
     id,
     img,
     type
-  } = items;
+  } = product;
 
   const {
     activeSize,
@@ -76,7 +53,9 @@ const Modal = ({
     ingredientsPrice,
     ingredients: addedIngredients
   } = useAppSelector((state) => state.products);
+  const isOpen = useAppSelector((state) => state.modal.isOpen);
   const dispatch = useAppDispatch();
+  const [locked, setLocked] = useLockedBody(isOpen, 'root');
 
   useEffect(() => {
     dispatch(setCurrentPrice(price[activeSize]));
@@ -84,12 +63,12 @@ const Modal = ({
 
   useEffect(() => {
     return () => {
-      dispatch(resetCurrentPrice());
+      dispatch(resetProduct());
     };
   }, []);
 
   const closeModal = () => {
-    setVisible(false);
+    dispatch(closeProductModal());
     setLocked(!locked);
   };
 
@@ -132,7 +111,7 @@ const Modal = ({
   return (
     <div
       className={clsx('modal', {
-        active: visible
+        active: isOpen
       })}
       onClick={closeModal}>
       <div className="modal__body" onClick={(e) => e.stopPropagation()}>
@@ -248,9 +227,7 @@ const Modal = ({
                     <InfoIcon />
                   </button>
                 </div>
-                <p className="modal-product__info">
-                  {weight}
-                </p>
+                <p className="modal-product__info">{weight}</p>
                 <div className="modal-product__desc">{desc}</div>
               </div>
 
