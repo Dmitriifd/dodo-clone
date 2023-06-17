@@ -17,91 +17,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
       },
       {
         id: 2,
         title: 'Свежие томаты',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/2.png'
       },
       {
         id: 3,
         title: 'Сырный бортик',
-        price: '179 ₽',
+        price: 179,
         img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
       },
       {
         id: 6,
         title: 'Нежный цыпленок',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/9.png'
       },
       {
         id: 10,
         title: 'Хрустящий бекон',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/10.png'
       },
       {
         id: 11,
         title: 'Кубики брынзы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/11.png'
       },
       {
         id: 12,
         title: 'Острая чоризо',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/12.png'
       },
       {
         id: 13,
         title: 'Сыр блю чиз',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/13.png'
       },
       {
         id: 14,
         title: 'Итальянские травы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/14.png'
       },
       {
         id: 15,
         title: 'Сочные ананасы',
-        price: '39 ₽',
+        price: 39,
         img: 'assets/button/15.png'
       },
       {
         id: 16,
         title: 'Сладкий перец',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/16.png'
       },
-      { id: 17, title: 'Маслины', price: '79 ₽', img: 'assets/button/17.png' },
-      { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -122,91 +122,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
       },
       {
         id: 2,
         title: 'Свежие томаты',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/2.png'
       },
       {
         id: 3,
         title: 'Сырный бортик',
-        price: '179 ₽',
+        price: 179,
         img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
       },
       {
         id: 6,
         title: 'Нежный цыпленок',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/9.png'
       },
       {
         id: 10,
         title: 'Хрустящий бекон',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/10.png'
       },
       {
         id: 11,
         title: 'Кубики брынзы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/11.png'
       },
       {
         id: 12,
         title: 'Острая чоризо',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/12.png'
       },
       {
         id: 13,
         title: 'Сыр блю чиз',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/13.png'
       },
       {
         id: 14,
         title: 'Итальянские травы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/14.png'
       },
       {
         id: 15,
         title: 'Сочные ананасы',
-        price: '39 ₽',
+        price: 39,
         img: 'assets/button/15.png'
       },
       {
         id: 16,
         title: 'Сладкий перец',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/16.png'
       },
-      { id: 17, title: 'Маслины', price: '79 ₽', img: 'assets/button/17.png' },
-      { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -227,91 +227,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
       },
       {
         id: 2,
         title: 'Свежие томаты',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/2.png'
       },
       {
         id: 3,
         title: 'Сырный бортик',
-        price: '179 ₽',
+        price: 179,
         img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
       },
       {
         id: 6,
         title: 'Нежный цыпленок',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/9.png'
       },
       {
         id: 10,
         title: 'Хрустящий бекон',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/10.png'
       },
       {
         id: 11,
         title: 'Кубики брынзы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/11.png'
       },
       {
         id: 12,
         title: 'Острая чоризо',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/12.png'
       },
       {
         id: 13,
         title: 'Сыр блю чиз',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/13.png'
       },
       {
         id: 14,
         title: 'Итальянские травы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/14.png'
       },
       {
         id: 15,
         title: 'Сочные ананасы',
-        price: '39 ₽',
+        price: 39,
         img: 'assets/button/15.png'
       },
       {
         id: 16,
         title: 'Сладкий перец',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/16.png'
       },
-      { id: 17, title: 'Маслины', price: '79 ₽', img: 'assets/button/17.png' },
-      { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -332,91 +332,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
       },
       {
         id: 2,
         title: 'Свежие томаты',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/2.png'
       },
       {
         id: 3,
         title: 'Сырный бортик',
-        price: '179 ₽',
+        price: 179,
         img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
       },
       {
         id: 6,
         title: 'Нежный цыпленок',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/9.png'
       },
       {
         id: 10,
         title: 'Хрустящий бекон',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/10.png'
       },
       {
         id: 11,
         title: 'Кубики брынзы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/11.png'
       },
       {
         id: 12,
         title: 'Острая чоризо',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/12.png'
       },
       {
         id: 13,
         title: 'Сыр блю чиз',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/13.png'
       },
       {
         id: 14,
         title: 'Итальянские травы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/14.png'
       },
       {
         id: 15,
         title: 'Сочные ананасы',
-        price: '39 ₽',
+        price: 39,
         img: 'assets/button/15.png'
       },
       {
         id: 16,
         title: 'Сладкий перец',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/16.png'
       },
-      { id: 17, title: 'Маслины', price: '79 ₽', img: 'assets/button/17.png' },
-      { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -437,91 +437,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
       },
       {
         id: 2,
         title: 'Свежие томаты',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/2.png'
       },
       {
         id: 3,
         title: 'Сырный бортик',
-        price: '179 ₽',
+        price: 179,
         img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
       },
       {
         id: 6,
         title: 'Нежный цыпленок',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/9.png'
       },
       {
         id: 10,
         title: 'Хрустящий бекон',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/10.png'
       },
       {
         id: 11,
         title: 'Кубики брынзы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/11.png'
       },
       {
         id: 12,
         title: 'Острая чоризо',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/12.png'
       },
       {
         id: 13,
         title: 'Сыр блю чиз',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/13.png'
       },
       {
         id: 14,
         title: 'Итальянские травы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/14.png'
       },
       {
         id: 15,
         title: 'Сочные ананасы',
-        price: '39 ₽',
+        price: 39,
         img: 'assets/button/15.png'
       },
       {
         id: 16,
         title: 'Сладкий перец',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/16.png'
       },
-      { id: 17, title: 'Маслины', price: '79 ₽', img: 'assets/button/17.png' },
-      { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -542,91 +542,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
       },
       {
         id: 2,
         title: 'Свежие томаты',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/2.png'
       },
       {
         id: 3,
         title: 'Сырный бортик',
-        price: '179 ₽',
+        price: 179,
         img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
       },
       {
         id: 6,
         title: 'Нежный цыпленок',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/9.png'
       },
       {
         id: 10,
         title: 'Хрустящий бекон',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/10.png'
       },
       {
         id: 11,
         title: 'Кубики брынзы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/11.png'
       },
       {
         id: 12,
         title: 'Острая чоризо',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/12.png'
       },
       {
         id: 13,
         title: 'Сыр блю чиз',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/13.png'
       },
       {
         id: 14,
         title: 'Итальянские травы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/14.png'
       },
       {
         id: 15,
         title: 'Сочные ананасы',
-        price: '39 ₽',
+        price: 39,
         img: 'assets/button/15.png'
       },
       {
         id: 16,
         title: 'Сладкий перец',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/16.png'
       },
-      { id: 17, title: 'Маслины', price: '79 ₽', img: 'assets/button/17.png' },
-      { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -647,91 +647,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
       },
       {
         id: 2,
         title: 'Свежие томаты',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/2.png'
       },
       {
         id: 3,
         title: 'Сырный бортик',
-        price: '179 ₽',
+        price: 179,
         img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
       },
       {
         id: 6,
         title: 'Нежный цыпленок',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/9.png'
       },
       {
         id: 10,
         title: 'Хрустящий бекон',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/10.png'
       },
       {
         id: 11,
         title: 'Кубики брынзы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/11.png'
       },
       {
         id: 12,
         title: 'Острая чоризо',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/12.png'
       },
       {
         id: 13,
         title: 'Сыр блю чиз',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/13.png'
       },
       {
         id: 14,
         title: 'Итальянские травы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/14.png'
       },
       {
         id: 15,
         title: 'Сочные ананасы',
-        price: '39 ₽',
+        price: 39,
         img: 'assets/button/15.png'
       },
       {
         id: 16,
         title: 'Сладкий перец',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/16.png'
       },
-      { id: 17, title: 'Маслины', price: '79 ₽', img: 'assets/button/17.png' },
-      { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -752,91 +752,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
       },
       {
         id: 2,
         title: 'Свежие томаты',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/2.png'
       },
       {
         id: 3,
         title: 'Сырный бортик',
-        price: '179 ₽',
+        price: 179,
         img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
       },
       {
         id: 6,
         title: 'Нежный цыпленок',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/9.png'
       },
       {
         id: 10,
         title: 'Хрустящий бекон',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/10.png'
       },
       {
         id: 11,
         title: 'Кубики брынзы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/11.png'
       },
       {
         id: 12,
         title: 'Острая чоризо',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/12.png'
       },
       {
         id: 13,
         title: 'Сыр блю чиз',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/13.png'
       },
       {
         id: 14,
         title: 'Итальянские травы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/14.png'
       },
       {
         id: 15,
         title: 'Сочные ананасы',
-        price: '39 ₽',
+        price: 39,
         img: 'assets/button/15.png'
       },
       {
         id: 16,
         title: 'Сладкий перец',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/16.png'
       },
-      { id: 17, title: 'Маслины', price: '79 ₽', img: 'assets/button/17.png' },
-      { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -857,21 +857,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
+      },
+      {
+        id: 2,
+        title: 'Свежие томаты',
+        price: 59,
+        img: 'assets/button/2.png'
+      },
+      {
+        id: 3,
+        title: 'Сырный бортик',
+        price: 179,
+        img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
-      }
+      },
+      {
+        id: 6,
+        title: 'Нежный цыпленок',
+        price: 79,
+        img: 'assets/button/6.png'
+      },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
+      {
+        id: 9,
+        title: 'Маринованные огурчики',
+        price: 59,
+        img: 'assets/button/9.png'
+      },
+      {
+        id: 10,
+        title: 'Хрустящий бекон',
+        price: 79,
+        img: 'assets/button/10.png'
+      },
+      {
+        id: 11,
+        title: 'Кубики брынзы',
+        price: 79,
+        img: 'assets/button/11.png'
+      },
+      {
+        id: 12,
+        title: 'Острая чоризо',
+        price: 79,
+        img: 'assets/button/12.png'
+      },
+      {
+        id: 13,
+        title: 'Сыр блю чиз',
+        price: 79,
+        img: 'assets/button/13.png'
+      },
+      {
+        id: 14,
+        title: 'Итальянские травы',
+        price: 79,
+        img: 'assets/button/14.png'
+      },
+      {
+        id: 15,
+        title: 'Сочные ананасы',
+        price: 39,
+        img: 'assets/button/15.png'
+      },
+      {
+        id: 16,
+        title: 'Сладкий перец',
+        price: 59,
+        img: 'assets/button/16.png'
+      },
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -892,91 +962,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
       },
       {
         id: 2,
         title: 'Свежие томаты',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/2.png'
       },
       {
         id: 3,
         title: 'Сырный бортик',
-        price: '179 ₽',
+        price: 179,
         img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
       },
       {
         id: 6,
         title: 'Нежный цыпленок',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/9.png'
       },
       {
         id: 10,
         title: 'Хрустящий бекон',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/10.png'
       },
       {
         id: 11,
         title: 'Кубики брынзы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/11.png'
       },
       {
         id: 12,
         title: 'Острая чоризо',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/12.png'
       },
       {
         id: 13,
         title: 'Сыр блю чиз',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/13.png'
       },
       {
         id: 14,
         title: 'Итальянские травы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/14.png'
       },
       {
         id: 15,
         title: 'Сочные ананасы',
-        price: '39 ₽',
+        price: 39,
         img: 'assets/button/15.png'
       },
       {
         id: 16,
         title: 'Сладкий перец',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/16.png'
       },
-      { id: 17, title: 'Маслины', price: '79 ₽', img: 'assets/button/17.png' },
-      { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -997,21 +1067,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
+      },
+      {
+        id: 2,
+        title: 'Свежие томаты',
+        price: 59,
+        img: 'assets/button/2.png'
+      },
+      {
+        id: 3,
+        title: 'Сырный бортик',
+        price: 179,
+        img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
-      }
+      },
+      {
+        id: 6,
+        title: 'Нежный цыпленок',
+        price: 79,
+        img: 'assets/button/6.png'
+      },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
+      {
+        id: 9,
+        title: 'Маринованные огурчики',
+        price: 59,
+        img: 'assets/button/9.png'
+      },
+      {
+        id: 10,
+        title: 'Хрустящий бекон',
+        price: 79,
+        img: 'assets/button/10.png'
+      },
+      {
+        id: 11,
+        title: 'Кубики брынзы',
+        price: 79,
+        img: 'assets/button/11.png'
+      },
+      {
+        id: 12,
+        title: 'Острая чоризо',
+        price: 79,
+        img: 'assets/button/12.png'
+      },
+      {
+        id: 13,
+        title: 'Сыр блю чиз',
+        price: 79,
+        img: 'assets/button/13.png'
+      },
+      {
+        id: 14,
+        title: 'Итальянские травы',
+        price: 79,
+        img: 'assets/button/14.png'
+      },
+      {
+        id: 15,
+        title: 'Сочные ананасы',
+        price: 39,
+        img: 'assets/button/15.png'
+      },
+      {
+        id: 16,
+        title: 'Сладкий перец',
+        price: 59,
+        img: 'assets/button/16.png'
+      },
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   },
   {
@@ -1032,91 +1172,91 @@ export const pizzaData = [
       {
         id: 1,
         title: 'Сливочная моцарелла',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/1.png'
       },
       {
         id: 2,
         title: 'Свежие томаты',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/2.png'
       },
       {
         id: 3,
         title: 'Сырный бортик',
-        price: '179 ₽',
+        price: 179,
         img: 'assets/button/3.png'
       },
       {
         id: 4,
         title: 'Чеддер и пармезан',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/4.png'
       },
       {
         id: 5,
         title: 'Острый халапеньо',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/5.png'
       },
       {
         id: 6,
         title: 'Нежный цыпленок',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/6.png'
       },
-      { id: 7, title: 'Ветчина', price: '79 ₽', img: 'assets/button/7.png' },
-      { id: 8, title: 'Шампиньоны', price: '59 ₽', img: 'assets/button/8.png' },
+      { id: 7, title: 'Ветчина', price: 79, img: 'assets/button/7.png' },
+      { id: 8, title: 'Шампиньоны', price: 59, img: 'assets/button/8.png' },
       {
         id: 9,
         title: 'Маринованные огурчики',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/9.png'
       },
       {
         id: 10,
         title: 'Хрустящий бекон',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/10.png'
       },
       {
         id: 11,
         title: 'Кубики брынзы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/11.png'
       },
       {
         id: 12,
         title: 'Острая чоризо',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/12.png'
       },
       {
         id: 13,
         title: 'Сыр блю чиз',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/13.png'
       },
       {
         id: 14,
         title: 'Итальянские травы',
-        price: '79 ₽',
+        price: 79,
         img: 'assets/button/14.png'
       },
       {
         id: 15,
         title: 'Сочные ананасы',
-        price: '39 ₽',
+        price: 39,
         img: 'assets/button/15.png'
       },
       {
         id: 16,
         title: 'Сладкий перец',
-        price: '59 ₽',
+        price: 59,
         img: 'assets/button/16.png'
       },
-      { id: 17, title: 'Маслины', price: '79 ₽', img: 'assets/button/17.png' },
-      { id: 18, title: 'Митболы', price: '79 ₽', img: 'assets/button/18.png' }
+      { id: 17, title: 'Маслины', price: 79, img: 'assets/button/17.png' },
+      { id: 18, title: 'Митболы', price: 79, img: 'assets/button/18.png' }
     ]
   }
 ];

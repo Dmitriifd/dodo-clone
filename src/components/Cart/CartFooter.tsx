@@ -1,4 +1,11 @@
+import { selectTotalCost, selectTotalItems } from 'redux/cart/cartSlice';
+import { useAppSelector } from 'redux/store';
+import { declOfNum } from 'utils/declOfNum';
+
 const CartFooter = () => {
+  const totalPrice = useAppSelector(selectTotalCost);
+  const totalCount = useAppSelector(selectTotalItems);
+
   return (
     <div className="cart-footer">
       <div className="cart-footer__promo">
@@ -10,8 +17,8 @@ const CartFooter = () => {
       </div>
       <div className="cart-footer__order">
         <div className="cart-footer__info">
-          1 товар
-          <span>1 038 ₽</span>
+          {declOfNum(totalCount, ['товар', 'товара', 'товаров'])}
+          <span>{totalPrice} ₽</span>
         </div>
         <div className="cart-footer__info">
           <span>
@@ -39,7 +46,9 @@ const CartFooter = () => {
             <svg
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16" width={14} height={14}>
+              viewBox="0 0 16 16"
+              width={14}
+              height={14}>
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -52,7 +61,7 @@ const CartFooter = () => {
       <div className="cart-footer__total">
         <div className="cart-footer__info price">
           <p>Сумма заказа</p>
-          <span>1 038 ₽</span>
+          <span>{totalPrice} ₽</span>
         </div>
         <button className="cart-footer__btn">
           К оформлению заказа
@@ -73,6 +82,6 @@ const CartFooter = () => {
       </div>
     </div>
   );
-}
+};
 
 export { CartFooter };

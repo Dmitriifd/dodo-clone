@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, LegacyRef } from 'react';
 import { clsx } from 'clsx';
 import { ReactComponent as Star } from 'assets/img/star.svg';
 import { ReactComponent as Coin } from 'assets/img/dodocoin.svg';
@@ -8,22 +8,22 @@ import { ReactComponent as GeoIcon } from 'assets/img/geo.svg';
 import { ReactComponent as PhoneIcon } from 'assets/img/phone-icon.svg';
 import { ReactComponent as GoogleIcon } from 'assets/img/google-play-icon.svg';
 import logo from 'assets/img/pizza.svg';
+import { useLockedBody } from 'usehooks-ts';
 import './Header.scss';
 
-const Header = ({ ref1, isMobile }: any) => {
+interface HeAderProps {
+  ref1: LegacyRef<HTMLDivElement>;
+  isMobile: boolean;
+}
+
+const Header = ({ ref1, isMobile }: HeAderProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [locked, setLocked] = useLockedBody(false, 'root');
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setLocked(!locked);
   };
-
-  useEffect(() => {
-    if (isOpen) {
-      document.documentElement.classList.add('no-scroll');
-    } else {
-      document.documentElement.classList.remove('no-scroll');
-    }
-  }, [isOpen]);
 
   return (
     <header className="header">
@@ -59,11 +59,7 @@ const Header = ({ ref1, isMobile }: any) => {
             </a>
             <button className="header__auth-btn btn">Войти</button>
             <button className="header__burger">
-              <Burger
-                width={32}
-                height={32}
-                onClick={toggleMenu}
-              />
+              <Burger width={32} height={32} onClick={toggleMenu} />
             </button>
           </div>
         </div>

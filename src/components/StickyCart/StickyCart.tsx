@@ -1,15 +1,16 @@
 import { ReactComponent as CartIcon } from 'assets/img/cart-icon.svg';
 import './StickyCart.scss';
-import { useAppDispatch } from 'redux/store';
-import { closeCart, openCart } from 'redux/cart/slice';
+import { useAppDispatch, useAppSelector } from 'redux/store';
+import { openCart, selectTotalItems } from 'redux/cart/cartSlice';
 
 const StickyCart = () => {
   const dispatch = useAppDispatch();
+   const totalCount = useAppSelector(selectTotalItems);
 
   return (
     <div className="sticky" onClick={() => dispatch(openCart())}>
       <a href="#" className="sticky-cart">
-        <span>2</span>
+        <span>{totalCount}</span>
         <CartIcon />
       </a>
     </div>

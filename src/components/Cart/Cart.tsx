@@ -1,36 +1,21 @@
 import clsx from 'clsx';
 import { ReactComponent as CloseIcon } from 'assets/img/close-drawer-icon.svg';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { CartEmpty } from './CartEmpty';
 import { CartHeader } from './CartHeader';
 import { CartItem } from './CartItem';
 import { CartFooter } from './CartFooter';
 import { CartSlider } from './CartSlider';
-import './Cart.scss';
 import { useAppDispatch, useAppSelector } from 'redux/store';
-import { closeCart } from 'redux/cart/slice';
-
-const cartItemData = [
-  {
-    id: 1,
-    img: 'assets/pizza/cart-item.png',
-    title: 'Пицца от шефа',
-    desc: 'Средняя 30 см, традиционное тесто + томаты',
-    price: '1 038 ₽'
-  },
-  {
-    id: 2,
-    img: 'assets/pizza/cart-item.png',
-    title: 'Пицца от шефа',
-    desc: 'Средняя 30 см, традиционное тесто + томаты',
-    price: '1 038 ₽'
-  }
-];
+import { closeCart, selectTotalCost, selectTotalItems } from 'redux/cart/cartSlice';
+import { declOfNum } from 'utils/declOfNum';
+import './Cart.scss';
 
 const Cart = () => {
-  const [isEmpty, _] = useState(false);
-  const { isOpenCart } = useAppSelector((state) => state.cart);
+  const { isOpenCart, orderList } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
+  const totalPrice = useAppSelector(selectTotalCost);
+  const totalCount = useAppSelector(selectTotalItems);
 
   useEffect(() => {
     if (isOpenCart) {
@@ -54,16 +39,19 @@ const Cart = () => {
             <CloseIcon />
           </button>
         )}
-        {isEmpty ? (
+        {!orderList.length ? (
           <CartEmpty />
         ) : (
           <div className="cart__content cart">
             <CartHeader />
             <div className="cart__header">
-              <h3 className="cart__title">2 товара на 1 038 ₽</h3>
+              <h3 className="cart__title">
+                {declOfNum(totalCount, ['товар', 'товара', 'товаров'])} на
+                {' '}{totalPrice} ₽
+              </h3>
             </div>
             <div className="cart__body">
-              {cartItemData.map((cartItem) => (
+              {orderList.map((cartItem) => (
                 <CartItem key={cartItem.id} {...cartItem} />
               ))}
             </div>

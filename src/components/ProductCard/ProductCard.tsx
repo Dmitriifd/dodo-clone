@@ -1,54 +1,48 @@
 import { isMobile } from 'react-device-detect';
-import { Modal } from 'components/Modal';
-import { useState} from 'react';
-import { useLockedBody } from 'usehooks-ts';
+import { IProduct } from 'types/product';
+import { useAppDispatch } from 'redux/store';
+import { openProductModal } from 'redux/productModal/productModalSlice';
+import { MouseEvent } from 'react';
 import './ProductCard.scss';
 
 interface ProductCardProps {
-  img: string;
-  title: string;
-  description: string;
-  price: string;
-  id: number;
+  item: IProduct;
 }
 
-const ProductCard = (item: any) => {
+const ProductCard = ({ item }: ProductCardProps) => {
   const { img, title, desc, price } = item;
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [locked, setLocked] = useLockedBody(false, 'root');
 
-  function openModal(e: any) {
+  const dispatch = useAppDispatch();
+
+  const handleProductClick = (
+    e: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLAnchorElement>
+  ) => {
     e.preventDefault();
-    setIsOpenModal(true);
-    setLocked(!locked);
-  }
+    dispatch(openProductModal(item));
+  };
 
   return (
     <>
-      {isOpenModal && (
-        <Modal
-          visible={isOpenModal}
-          setVisible={setIsOpenModal}
-          locked={locked}
-          setLocked={setLocked}
-          items={item}
-        />
-      )}
       <article className="pizza__item product-card">
-        <a href="#" className="product-card__img" onClick={openModal}>
+        <a href="#" className="product-card__img" onClick={handleProductClick}>
           <img src={img} alt={title} />
         </a>
         <div className="product-card__body">
-          <h3 className="product-card__title" onClick={openModal}>
-            <a href="#" className="product-card__link">
+          <h3 className="product-card__title">
+            <a
+              href="#"
+              className="product-card__link"
+              onClick={handleProductClick}>
               {title}
             </a>
           </h3>
           <p className="product-card__description">{desc}</p>
           <div className="product-card__footer">
-            <p className="product-card__price">от {price[0]}</p>
-            <button className="product-card__button" onClick={openModal}>
-              {isMobile ? `от ${price[0]}` : 'Выбрать'}
+            <p className="product-card__price">от {price[0] || price} ₽</p>
+            <button
+              className="product-card__button"
+              onClick={handleProductClick}>
+              {isMobile ? `от ${price[0] || price} ₽` : 'Выбрать'}
             </button>
           </div>
         </div>

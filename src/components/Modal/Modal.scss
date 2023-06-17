@@ -16,8 +16,14 @@
   position: relative;
   background: rgb(255, 255, 255);
   border-radius: 20px;
-  min-width: 925px;
+  max-width: 925px;
   height: 610px;
+
+  @media (max-width: 1040px) {
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 0;
+  }
 }
 
 .modal__icon {
@@ -44,16 +50,53 @@
   display: flex;
   overflow: hidden;
   height: 100%;
+
+  &::-webkit-scrollbar {
+    background-color: rgba(57, 57, 57, 0.1);
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(57, 57, 57, 0.2);
+    border-radius: 4px;
+  }
+
+  @media (max-width: 1040px) {
+    overflow-y: auto;
+    flex-direction: column;
+  }
 }
 
 .modal__left {
   position: relative;
   width: 530px;
+
+  @media (max-width: 1040px) {
+    width: auto;
+    max-width: 530px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0 auto;
+    height: 480px;
+  }
+  @media (max-width: 375px) {
+    height: 350px;
+  }
 }
 
 .modal__right {
   width: 395px;
   background: rgb(252, 252, 252);
+
+  @media (max-width: 1040px) {
+    width: 100%;
+  }
 }
 
 .modal__radius-m {
@@ -63,6 +106,11 @@
   transform: translate(-50%, -50%);
   width: 382px;
   height: 382px;
+  @media (max-width: 1040px) {
+    svg {
+      display: none;
+    }
+  }
 }
 
 .modal__radius-l {
@@ -72,6 +120,12 @@
   transform: translate(-50%, -50%);
   width: 450px;
   height: 450px;
+
+  @media (max-width: 1040px) {
+    svg {
+      display: none;
+    }
+  }
 }
 
 .modal__img {
@@ -86,6 +140,31 @@
   img {
     max-width: 100%;
   }
+
+  @media (max-width: 1040px) {
+    width: 100%;
+    height: 100%;
+    position: static;
+    transform: none;
+  }
+}
+
+.modal-button-close {
+  display: none;
+  @media (max-width: 1040px) {
+    display: inline-block;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 12px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 11;
+  }
 }
 
 .modal__img-size0 {
@@ -93,11 +172,20 @@
   height: 300px;
   top: 51%;
   left: 52%;
+  @media (max-width: 375px) {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .modal__img-size1 {
   width: 410px;
   height: 410px;
+
+  @media (max-width: 375px) {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 .modal__img-size2 {
@@ -105,15 +193,19 @@
   height: 480px;
   top: 52%;
   left: 52.5%;
+
+  @media (max-width: 375px) {
+    width: 300px;
+    height: 300px;
+  }
 }
-
-
 
 .modal-product {
   padding: 30px 0;
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .modal-product__head {
@@ -284,6 +376,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
+
+  @media (max-width: 375px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .ingredients-card {
@@ -314,6 +410,10 @@
     right: 4px;
     opacity: 0;
   }
+
+  @media (max-width: 1040px) {
+    width: 100%;
+  }
 }
 
 .ingredients-card__img {
@@ -342,6 +442,20 @@
   width: 85%;
   margin-right: 30px;
   margin-left: 30px;
+
+  @media (max-width: 1040px) {
+    margin-right: 15px;
+    margin-left: 15px;
+    width: 95%;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+  }
+
+  @media (max-width: 375px) {
+    margin: 0;
+    width: 100%;
+  }
 }
 
 .modal-product__btn:disabled {
