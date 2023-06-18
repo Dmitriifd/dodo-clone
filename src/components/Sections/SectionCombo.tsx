@@ -1,5 +1,6 @@
-import { ProductCard } from 'components/ProductCard';
 import { useGetComboQuery } from 'redux/api/productsApi';
+
+import { ProductCard } from 'components/ProductCard';
 
 const SectionCombo = () => {
   const { data: combo = [] } = useGetComboQuery();

@@ -1,6 +1,6 @@
+import { memo,useState } from 'react';
 import { ReactComponent as CheckIcon } from 'assets/img/button-selected.svg';
 import clsx from 'clsx';
-import { useState, memo } from 'react';
 import { addIngredient, removeIngredient } from 'redux/product/productSlice';
 import { useAppDispatch } from 'redux/store';
 import { Ingredient } from 'types/product';

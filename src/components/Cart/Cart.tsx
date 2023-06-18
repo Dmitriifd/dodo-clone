@@ -1,14 +1,16 @@
-import clsx from 'clsx';
 import { ReactComponent as CloseIcon } from 'assets/img/close-drawer-icon.svg';
+import clsx from 'clsx';
+import { closeCart, selectTotalCost, selectTotalItems } from 'redux/cart/cartSlice';
+import { useAppDispatch, useAppSelector } from 'redux/store';
+import { useLockedBody } from 'usehooks-ts';
+import { declOfNum } from 'utils/declOfNum';
+
 import { CartEmpty } from './CartEmpty';
+import { CartFooter } from './CartFooter';
 import { CartHeader } from './CartHeader';
 import { CartItem } from './CartItem';
-import { CartFooter } from './CartFooter';
 import { CartSlider } from './CartSlider';
-import { useAppDispatch, useAppSelector } from 'redux/store';
-import { closeCart, selectTotalCost, selectTotalItems } from 'redux/cart/cartSlice';
-import { declOfNum } from 'utils/declOfNum';
-import { useLockedBody } from 'usehooks-ts';
+
 import './Cart.scss';
 
 const Cart = () => {

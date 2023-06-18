@@ -1,5 +1,6 @@
-import { ProductCard } from 'components/ProductCard';
 import { useGetDrinksQuery } from 'redux/api/productsApi';
+
+import { ProductCard } from 'components/ProductCard';
 
 const SectionDrinks = () => {
   const { data: drinks = [] } = useGetDrinksQuery();

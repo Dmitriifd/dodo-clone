@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
+import { useGetProductsQuery } from 'redux/api/productsApi';
+
 import { ProductCard } from 'components/ProductCard';
 import { Skeleton } from 'components/Skeleton/Skeleton';
 import { SkeletonMobile } from 'components/Skeleton/SkeletonMobile';
-import { useEffect, useState } from 'react';
-import { useGetProductsQuery } from 'redux/api/productsApi';
 
 const SectionPizza = () => {
   const { data: pizza = [], isLoading } = useGetProductsQuery();

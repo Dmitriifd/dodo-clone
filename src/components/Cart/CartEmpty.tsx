@@ -1,5 +1,7 @@
 import empty from 'assets/img/emptyCart.svg';
+
 import { CartHeader } from './CartHeader';
+
 import './Cart.scss';
 
 const CartEmpty = () => {

@@ -1,8 +1,9 @@
+import { memo,MouseEvent } from 'react';
 import { isMobile } from 'react-device-detect';
-import { IProduct } from 'types/product';
-import { useAppDispatch } from 'redux/store';
 import { openProductModal } from 'redux/productModal/productModalSlice';
-import { MouseEvent, memo } from 'react';
+import { useAppDispatch } from 'redux/store';
+import { IProduct } from 'types/product';
+
 import './ProductCard.scss';
 
 interface ProductCardProps {

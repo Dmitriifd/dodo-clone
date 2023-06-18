@@ -1,5 +1,6 @@
-import { ProductCard } from 'components/ProductCard';
 import { useGetDesertsQuery } from 'redux/api/productsApi';
+
+import { ProductCard } from 'components/ProductCard';
 
 const SectionDeserts = () => {
   const { data: deserts = [] } = useGetDesertsQuery();
