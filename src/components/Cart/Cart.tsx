@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import { ReactComponent as CloseIcon } from 'assets/img/close-drawer-icon.svg';
-import { useEffect } from 'react';
 import { CartEmpty } from './CartEmpty';
 import { CartHeader } from './CartHeader';
 import { CartItem } from './CartItem';
@@ -9,8 +8,8 @@ import { CartSlider } from './CartSlider';
 import { useAppDispatch, useAppSelector } from 'redux/store';
 import { closeCart, selectTotalCost, selectTotalItems } from 'redux/cart/cartSlice';
 import { declOfNum } from 'utils/declOfNum';
-import './Cart.scss';
 import { useLockedBody } from 'usehooks-ts';
+import './Cart.scss';
 
 const Cart = () => {
   const { isOpenCart, orderList } = useAppSelector((state) => state.cart);

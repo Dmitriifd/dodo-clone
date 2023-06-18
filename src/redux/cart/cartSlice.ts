@@ -27,29 +27,17 @@ const cartSlice = createSlice({
       state.isOpenCart = false;
     },
     addToCart: (state, action: PayloadAction<ICartItem>) => {
-      const {
-        id,
-        title,
-        price,
-        img,
-        type,
-        size,
-        diameter,
-        quantity,
-        addedIngredients
-      } = action.payload;
+      const { title, type, size, diameter, quantity, addedIngredients = [] } = action.payload;
+      const sortedAddedIngredients = addedIngredients.map((obj) => obj.title).sort();
 
       const findProduct = state.orderList.find((product: ICartItem) => {
-        const arr1 = product.addedIngredients?.map((obj) => obj.title);
-        const arr2 = addedIngredients?.map((obj) => obj.title);
-        const result = JSON.stringify(arr1) === JSON.stringify(arr2);
-
+        const sortedProductIngredients  = product.addedIngredients?.map((obj) => obj.title).sort();
         return (
           product.title === title &&
           product.type === type &&
           product.size === size &&
           product.diameter === diameter &&
-          result
+          JSON.stringify(sortedProductIngredients) === JSON.stringify(sortedAddedIngredients)
         );
       });
 
