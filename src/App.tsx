@@ -37,8 +37,6 @@ function App() {
   }, []);
 
   const isMobile = windowWidth < 992;
-  console.log('render');
-
 
   return (
     <>
