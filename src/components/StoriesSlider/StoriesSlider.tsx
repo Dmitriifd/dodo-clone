@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, memo } from 'react';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -35,7 +35,7 @@ const breakpoints = {
   }
 };
 
-const StoriesSlider = () => {
+const StoriesSlider = memo(() => {
   const [_, setInit] = useState<boolean>();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -73,6 +73,6 @@ const StoriesSlider = () => {
       </div>
     </section>
   );
-};
+});
 
 export { StoriesSlider };

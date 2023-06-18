@@ -21,7 +21,9 @@ import { useAppSelector } from 'redux/store';
 function App() {
   const { ref, inView } = useInView({ threshold: 1, initialInView: true });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const selectedProduct = useAppSelector((state) => state.modal.selectedProduct);
+  const selectedProduct = useAppSelector(
+    (state) => state.modal.selectedProduct
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,6 +37,8 @@ function App() {
   }, []);
 
   const isMobile = windowWidth < 992;
+  console.log('render');
+
 
   return (
     <>
@@ -53,12 +57,10 @@ function App() {
         <SectionPizza />
         <SectionCombo />
         <SectionSnacks />
-        <SectionDeserts  />
+        <SectionDeserts />
         <SectionDrinks />
       </main>
-      {selectedProduct && (
-        <Modal product={selectedProduct} />
-      )}
+      {selectedProduct && <Modal product={selectedProduct} />}
       <StickyCart />
       <Footer />
       <Cart />

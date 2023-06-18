@@ -1,6 +1,6 @@
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, memo } from 'react';
 import clsx from 'clsx';
 import { ReactComponent as CartArrow } from 'assets/img/arrow-cart.svg';
 import sauce from 'assets/img/sauce-bg.png';
@@ -59,7 +59,7 @@ const sliderItems = [
   }
 ];
 
-const CartSlider = () => {
+const CartSlider = memo(() => {
   const [_, setInit] = useState<boolean>();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -163,6 +163,6 @@ const CartSlider = () => {
       </div>
     </div>
   );
-};
+});
 
 export { CartSlider };

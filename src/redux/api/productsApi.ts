@@ -6,28 +6,22 @@ const API_URL = 'https://seed-uneven-caravel.glitch.me';
 export const productsApi = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
-  tagTypes: ['Products', 'Combo', 'Snacks', 'Deserts', 'Drinks'],
   endpoints: (builder) => ({
-    getProducts: builder.query<IProduct[], string>({
+    getProducts: builder.query<IProduct[], void>({
       query: () => `/products`,
-      providesTags: ['Products']
     }),
-    getCombo: builder.query<any, string>({
+    getCombo: builder.query<any, void>({
       query: () => `/combo`,
-      providesTags: ['Combo']
     }),
-    getSnacks: builder.query<any, string>({
+    getSnacks: builder.query<any, void>({
       query: () => `/snacks`,
-      providesTags: ['Snacks']
     }),
-    getDeserts: builder.query<any, string>({
+    getDeserts: builder.query<any, void>({
       query: () => `/deserts`,
-      providesTags: ['Deserts']
     }),
-    getDrinks: builder.query<any, string>({
+    getDrinks: builder.query<any, void>({
       query: () => `/drinks`,
-      providesTags: ['Drinks']
-    })
+    }),
   })
 });
 

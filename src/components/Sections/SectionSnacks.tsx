@@ -2,7 +2,7 @@ import { ProductCard } from 'components/ProductCard';
 import { useGetSnacksQuery } from 'redux/api/productsApi';
 
 const SectionSnacks = () => {
-  const { data: snacks = [] } = useGetSnacksQuery('');
+  const { data: snacks = [] } = useGetSnacksQuery();
 
   return (
     <section className="snacks section" id="snacks">

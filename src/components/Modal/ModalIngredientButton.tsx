@@ -1,12 +1,11 @@
 import { ReactComponent as CheckIcon } from 'assets/img/button-selected.svg';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { addIngredient, removeIngredient } from 'redux/product/productSlice';
 import { useAppDispatch } from 'redux/store';
 import { Ingredient } from 'types/product';
 
-
-const ModalIngredientButton = ({ img, title, price, id }: Ingredient) => {
+const ModalIngredientButton = memo(({ img, title, price, id }: Ingredient) => {
   const [selected, setSelected] = useState(false);
 
   const dispatch = useAppDispatch();
@@ -32,6 +31,6 @@ const ModalIngredientButton = ({ img, title, price, id }: Ingredient) => {
       <CheckIcon />
     </button>
   );
-};
+});
 
 export { ModalIngredientButton };

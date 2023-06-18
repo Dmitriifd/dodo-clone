@@ -1,4 +1,4 @@
-import { useEffect, useState, LegacyRef } from 'react';
+import { useState, LegacyRef, memo } from 'react';
 import { clsx } from 'clsx';
 import { ReactComponent as Star } from 'assets/img/star.svg';
 import { ReactComponent as Coin } from 'assets/img/dodocoin.svg';
@@ -16,7 +16,7 @@ interface HeAderProps {
   isMobile: boolean;
 }
 
-const Header = ({ ref1, isMobile }: HeAderProps) => {
+const Header = memo(({ ref1, isMobile }: HeAderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [locked, setLocked] = useLockedBody(false, 'root');
 
@@ -123,6 +123,6 @@ const Header = ({ ref1, isMobile }: HeAderProps) => {
       </div>
     </header>
   );
-};
+});
 
 export { Header };

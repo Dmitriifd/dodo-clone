@@ -5,10 +5,10 @@ import { ReactComponent as YoutubeIcon } from 'assets/img/youtube.svg';
 import { ReactComponent as AppStoreBanner } from 'assets/img/app-store.svg';
 import { ReactComponent as GooglePlayBanner } from 'assets/img/app-google.svg';
 import { ReactComponent as AppGalleryBanner } from 'assets/img/app-gallery.svg';
-
+import { memo } from 'react';
 import './Footer.scss';
 
-const Footer = () => {
+const Footer = memo(() => {
   return (
     <section className="footer">
       <div className="footer__secret">
@@ -166,6 +166,6 @@ const Footer = () => {
       </div>
     </section>
   );
-};
+});
 
 export { Footer };
