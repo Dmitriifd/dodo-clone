@@ -1,4 +1,4 @@
-import { createSlice,PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ICartItem, ISauceItem } from 'types/cartItem';
 
 import { RootState } from '../store';
@@ -28,7 +28,7 @@ const cartSlice = createSlice({
       state.isOpenCart = false;
     },
     addToCart: (state, action: PayloadAction<ICartItem>) => {
-      const { title, type, size, diameter, quantity, addedIngredients = [] } = action.payload;
+      const { title, type, id, size, diameter, quantity, addedIngredients = [] } = action.payload;
       const sortedAddedIngredients = addedIngredients.map((obj) => obj.title).sort();
 
       const findProduct = state.orderList.find((product: ICartItem) => {
@@ -40,6 +40,7 @@ const cartSlice = createSlice({
           product.size === size &&
           product.diameter === diameter &&
           JSON.stringify(sortedProductIngredients) === JSON.stringify(sortedAddedIngredients)
+          || product.id === id
         );
       });
 
