@@ -23,6 +23,7 @@ import { selectWeight } from 'utils/selectWeight';
 import { ModalIngredientButton } from './ModalIngredientButton';
 
 import './Modal.scss';
+import { createPortal } from 'react-dom';
 
 interface ModalProps {
   children?: ReactNode;
@@ -110,7 +111,7 @@ const Modal = ({
     }, 300);
   };
 
-  return (
+  return createPortal(
     <div
       className={clsx('modal', {
         active: isOpen
@@ -242,7 +243,8 @@ const Modal = ({
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
