@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react';
+import { memo,useRef, useState } from 'react';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/css';
 import 'swiper/css/navigation';
+
+import 'swiper/css';
 import './PopularSlider.scss';
 
 const sliderData = [
@@ -87,7 +88,7 @@ const breakpoints = {
   }
 };
 
-const PopularSlider = () => {
+const PopularSlider = memo(() => {
   const [_, setInit] = useState<boolean>();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -127,6 +128,6 @@ const PopularSlider = () => {
       </div>
     </section>
   );
-};
+});
 
 export { PopularSlider };

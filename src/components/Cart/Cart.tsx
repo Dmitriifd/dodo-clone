@@ -1,14 +1,16 @@
-import clsx from 'clsx';
 import { ReactComponent as CloseIcon } from 'assets/img/close-drawer-icon.svg';
-import { useEffect } from 'react';
+import clsx from 'clsx';
+import { closeCart, selectTotalCost, selectTotalItems } from 'redux/cart/cartSlice';
+import { useAppDispatch, useAppSelector } from 'redux/store';
+import { useLockedBody } from 'usehooks-ts';
+import { declOfNum } from 'utils/declOfNum';
+
 import { CartEmpty } from './CartEmpty';
+import { CartFooter } from './CartFooter';
 import { CartHeader } from './CartHeader';
 import { CartItem } from './CartItem';
-import { CartFooter } from './CartFooter';
 import { CartSlider } from './CartSlider';
-import { useAppDispatch, useAppSelector } from 'redux/store';
-import { closeCart, selectTotalCost, selectTotalItems } from 'redux/cart/cartSlice';
-import { declOfNum } from 'utils/declOfNum';
+
 import './Cart.scss';
 
 const Cart = () => {
@@ -16,26 +18,21 @@ const Cart = () => {
   const dispatch = useAppDispatch();
   const totalPrice = useAppSelector(selectTotalCost);
   const totalCount = useAppSelector(selectTotalItems);
+  const [locked, setLocked] = useLockedBody(isOpenCart, 'root');
 
-  useEffect(() => {
-    if (isOpenCart) {
-      document.documentElement.classList.add('no-scroll');
-    } else {
-      document.documentElement.classList.remove('no-scroll');
-    }
-  }, [isOpenCart]);
+  const handleCloseCart = () => {
+    dispatch(closeCart())
+  }
 
   return (
     <div
       className={clsx('cart-overlay', { active: isOpenCart })}
-      onClick={() => dispatch(closeCart())}>
+      onClick={handleCloseCart}>
       <div
         className={clsx('cart__wrapper', { active: isOpenCart })}
         onClick={(e) => e.stopPropagation()}>
         {isOpenCart && (
-          <button
-            className="cart__close-button"
-            onClick={() => dispatch(closeCart())}>
+          <button className="cart__close-button" onClick={handleCloseCart}>
             <CloseIcon />
           </button>
         )}
@@ -46,8 +43,8 @@ const Cart = () => {
             <CartHeader />
             <div className="cart__header">
               <h3 className="cart__title">
-                {declOfNum(totalCount, ['товар', 'товара', 'товаров'])} на
-                {' '}{totalPrice} ₽
+                {declOfNum(totalCount, ['товар', 'товара', 'товаров'])} на{' '}
+                {totalPrice} ₽
               </h3>
             </div>
             <div className="cart__body">

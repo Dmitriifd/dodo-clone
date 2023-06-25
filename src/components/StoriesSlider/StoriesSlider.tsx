@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react';
+import { memo,useRef, useState } from 'react';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/css';
 import 'swiper/css/navigation';
+
+import 'swiper/css';
 import './StoriesSlider.scss';
 
 const sliderData = [
@@ -35,7 +36,7 @@ const breakpoints = {
   }
 };
 
-const StoriesSlider = () => {
+const StoriesSlider = memo(() => {
   const [_, setInit] = useState<boolean>();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -73,6 +74,6 @@ const StoriesSlider = () => {
       </div>
     </section>
   );
-};
+});
 
 export { StoriesSlider };

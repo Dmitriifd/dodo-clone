@@ -1,6 +1,7 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ICartItem, ISauceItem } from 'types/cartItem';
+
+import { RootState } from '../store';
 
 interface CartState {
   isOpenCart: boolean;
@@ -27,29 +28,19 @@ const cartSlice = createSlice({
       state.isOpenCart = false;
     },
     addToCart: (state, action: PayloadAction<ICartItem>) => {
-      const {
-        id,
-        title,
-        price,
-        img,
-        type,
-        size,
-        diameter,
-        quantity,
-        addedIngredients
-      } = action.payload;
+      const { title, type, id, size, diameter, quantity, addedIngredients = [] } = action.payload;
+      const sortedAddedIngredients = addedIngredients.map((obj) => obj.title).sort();
 
       const findProduct = state.orderList.find((product: ICartItem) => {
-        const arr1 = product.addedIngredients?.map((obj) => obj.title);
-        const arr2 = addedIngredients?.map((obj) => obj.title);
-        const result = JSON.stringify(arr1) === JSON.stringify(arr2);
+        const sortedProductIngredients = product.addedIngredients?.map((obj) => obj.title).sort();
 
         return (
           product.title === title &&
           product.type === type &&
           product.size === size &&
           product.diameter === diameter &&
-          result
+          JSON.stringify(sortedProductIngredients) === JSON.stringify(sortedAddedIngredients)
+          || product.id === id
         );
       });
 
@@ -60,29 +51,21 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart: (state, action: PayloadAction<string>) => {
-      state.orderList = state.orderList.filter(
-        (item) => item.id !== action.payload
-      );
+      state.orderList = state.orderList.filter((item) => item.id !== action.payload);
     },
     increaseQuantity(state, action: PayloadAction<string>) {
-      const findProduct = state.orderList.find(
-        (item) => item.id === action.payload
-      );
+      const findProduct = state.orderList.find((item) => item.id === action.payload);
       if (findProduct) {
         findProduct.quantity++;
       }
     },
     decreaseQuantity(state, action: PayloadAction<string>) {
-      const findProduct = state.orderList.find(
-        (item) => item.id === action.payload
-      );
+      const findProduct = state.orderList.find((item) => item.id === action.payload);
       if (findProduct) {
         if (findProduct.quantity > 1) {
           findProduct.quantity--;
         } else {
-          state.orderList = state.orderList.filter(
-            (item) => item.id !== action.payload
-          );
+          state.orderList = state.orderList.filter((item) => item.id !== action.payload);
         }
       }
     },
@@ -103,10 +86,7 @@ export const selectTotalItems = (state: RootState) =>
   state.cart.orderList.reduce((total, item) => total + item.quantity, 0);
 
 export const selectTotalCost = (state: RootState) =>
-  state.cart.orderList.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+  state.cart.orderList.reduce((total, item) => total + item.price * item.quantity, 0);
 
 export const {
   openCart,

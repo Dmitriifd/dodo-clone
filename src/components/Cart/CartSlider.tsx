@@ -1,20 +1,21 @@
-import { Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { useRef, useState, useEffect } from 'react';
-import clsx from 'clsx';
+import { memo,useEffect, useRef, useState } from 'react';
 import { ReactComponent as CartArrow } from 'assets/img/arrow-cart.svg';
-import sauce from 'assets/img/sauce-bg.png';
-import dodster from 'assets/img/cart-order-3.jpeg';
 import drink from 'assets/img/cart-order-1.jpeg';
 import drink2 from 'assets/img/cart-order-2.jpeg';
+import dodster from 'assets/img/cart-order-3.jpeg';
 import sauce1 from 'assets/img/sauce-1.jpeg';
 import sauce2 from 'assets/img/sauce-2.jpeg';
 import sauce3 from 'assets/img/sauce-3.jpeg';
 import sauce4 from 'assets/img/sauce-4.jpeg';
-import { SauceItem } from './SauceItem';
+import sauce from 'assets/img/sauce-bg.png';
+import clsx from 'clsx';
 import { addProductFromCart } from 'redux/cart/cartSlice';
 import { useAppDispatch, useAppSelector } from 'redux/store';
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { ISauceItem } from 'types/cartItem';
+
+import { SauceItem } from './SauceItem';
 
 const data = [
   { id: '11', title: 'Сырный соус', price: 45, img: sauce4, quantity: 1 },
@@ -59,7 +60,7 @@ const sliderItems = [
   }
 ];
 
-const CartSlider = () => {
+const CartSlider = memo(() => {
   const [_, setInit] = useState<boolean>();
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -163,6 +164,6 @@ const CartSlider = () => {
       </div>
     </div>
   );
-};
+});
 
 export { CartSlider };

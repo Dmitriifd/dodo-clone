@@ -1,25 +1,27 @@
 import { ReactNode, useEffect } from 'react';
-import { clsx } from 'clsx';
+import { nanoid } from '@reduxjs/toolkit';
 import { ReactComponent as CloseIcon } from 'assets/img/close-drawer-icon.svg';
+import { ReactComponent as InfoIcon } from 'assets/img/modal-info-icon.svg';
 import { ReactComponent as RadiusM } from 'assets/img/radius-m.svg';
 import { ReactComponent as RadiusL } from 'assets/img/radius-x.svg';
-import { ReactComponent as InfoIcon } from 'assets/img/modal-info-icon.svg';
-import { ModalIngredientButton } from './ModalIngredientButton';
-import { selectWeight } from 'utils/selectWeight';
-import { useAppDispatch, useAppSelector } from 'redux/store';
+import { clsx } from 'clsx';
+import { addToCart } from 'redux/cart/cartSlice';
 import {
   resetProduct,
   selectSize,
   selectType,
   setCurrentPrice
 } from 'redux/product/productSlice';
-import { IProduct } from 'types/product';
-import { addToCart } from 'redux/cart/cartSlice';
-import { ICartItem } from 'types/cartItem';
-import { nanoid } from '@reduxjs/toolkit';
-import { useLockedBody } from 'usehooks-ts';
 import { closeProductModal } from 'redux/productModal/productModalSlice';
+import { useAppDispatch, useAppSelector } from 'redux/store';
+import { ICartItem } from 'types/cartItem';
+import { IProduct } from 'types/product';
+import { useLockedBody } from 'usehooks-ts';
 import { notify } from 'utils/notify';
+import { selectWeight } from 'utils/selectWeight';
+
+import { ModalIngredientButton } from './ModalIngredientButton';
+
 import './Modal.scss';
 
 interface ModalProps {

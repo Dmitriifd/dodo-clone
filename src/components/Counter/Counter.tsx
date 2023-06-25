@@ -1,5 +1,6 @@
-import { useAppDispatch, useAppSelector } from 'redux/store';
 import { decreaseQuantity, increaseQuantity } from 'redux/cart/cartSlice';
+import { useAppDispatch, useAppSelector } from 'redux/store';
+
 import './Counter.scss';
 
 const Counter = ({id}: {id: string}) => {

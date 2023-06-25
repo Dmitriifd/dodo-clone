@@ -1,14 +1,14 @@
+import { useEffect,useState } from 'react';
+import { Toaster } from 'react-hot-toast';
+import { useInView } from 'react-intersection-observer';
+import { useAppSelector } from 'redux/store';
+
 import { Cart } from 'components/Cart';
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
+import { Modal } from 'components/Modal';
 import { NavMenu } from 'components/NavMenu';
 import { PopularSlider } from 'components/PopularSlider';
-import { StickyCart } from 'components/StickyCart';
-import { StoriesSlider } from 'components/StoriesSlider';
-import { useInView } from 'react-intersection-observer';
-import { Toaster } from 'react-hot-toast';
-import { Modal } from 'components/Modal';
-import { useState, useEffect } from 'react';
 import {
   SectionCombo,
   SectionDeserts,
@@ -16,12 +16,15 @@ import {
   SectionPizza,
   SectionSnacks
 } from 'components/Sections';
-import { useAppSelector } from 'redux/store';
+import { StickyCart } from 'components/StickyCart';
+import { StoriesSlider } from 'components/StoriesSlider';
 
 function App() {
   const { ref, inView } = useInView({ threshold: 1, initialInView: true });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const selectedProduct = useAppSelector((state) => state.modal.selectedProduct);
+  const selectedProduct = useAppSelector(
+    (state) => state.modal.selectedProduct
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -53,12 +56,10 @@ function App() {
         <SectionPizza />
         <SectionCombo />
         <SectionSnacks />
-        <SectionDeserts  />
+        <SectionDeserts />
         <SectionDrinks />
       </main>
-      {selectedProduct && (
-        <Modal product={selectedProduct} />
-      )}
+      {selectedProduct && <Modal product={selectedProduct} />}
       <StickyCart />
       <Footer />
       <Cart />
