@@ -18,7 +18,7 @@ const Cart = () => {
   const dispatch = useAppDispatch();
   const totalPrice = useAppSelector(selectTotalCost);
   const totalCount = useAppSelector(selectTotalItems);
-  const [locked, setLocked] = useLockedBody(isOpenCart, 'root');
+  const [, ,] = useLockedBody(isOpenCart, 'root');
 
   const handleCloseCart = () => {
     dispatch(closeCart())

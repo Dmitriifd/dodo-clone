@@ -69,8 +69,8 @@ const CartSlider = memo(() => {
   const dispatch = useAppDispatch();
   const isOpenCart = useAppSelector((state) => state.cart.isOpenCart);
 
-  const [sauces, setSauces] = useState(data);
-  const [products, setProducts] = useState(sliderItems);
+  const [sauces, ,] = useState(data);
+  const [products, ,] = useState(sliderItems);
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
 
   useEffect(() => {

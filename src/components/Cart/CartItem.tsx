@@ -7,12 +7,10 @@ import { Counter } from 'components/Counter';
 const CartItem = ({
   id,
   title,
-  price,
   img,
   type,
   size,
   diameter,
-  quantity,
   addedIngredients
 }: ICartItem) => {
   const dispatch = useAppDispatch();
